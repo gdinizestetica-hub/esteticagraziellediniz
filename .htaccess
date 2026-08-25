@@ -1,0 +1,17 @@
+# Compatibilidade com URLs antigas e referências legadas de imagens.
+# Mantém links externos funcionando enquanto o site usa nomes de arquivos canônicos.
+
+RewriteEngine On
+
+# Imagem principal antiga (.webp) -> arquivo PNG existente
+RewriteRule ^images/grazielle-diniz-esteticista-guaruja\.webp$ /images/foto-da-profissional-esteticista-grazielle-diniz-guaruja.png [R=301,L,NE]
+
+# Logo antigo referenciado no Schema -> logo atual
+RewriteRule ^images/logo-grazielle-diniz\.png$ /images/logotipo-fundo-transparente.png [R=301,L,NE]
+
+# Poster que não existe mais -> imagem principal disponível
+RewriteRule ^images/video-poster-resultados-guaruja\.webp$ /images/foto-da-profissional-esteticista-grazielle-diniz-guaruja.png [R=301,L,NE]
+
+# Nomes antigos/duplicados da foto da profissional -> arquivo canônico
+RewriteRule ^images/grazielle-diniz-esteticista-guaruja\.png$ /images/foto-da-profissional-esteticista-grazielle-diniz-guaruja.png [R=301,L,NE]
+RewriteRule ^images/grazielle-diniz-esteticista-jacarei\.png$ /images/foto-da-profissional-esteticista-grazielle-diniz-guaruja.png [R=301,L,NE]
