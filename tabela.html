@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Planos e Pacotes | Grazielle Diniz - Estética e Depilação a Laser</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #004D40; 
+            --primary-light: #00695C;
+            --primary-very-light: rgba(0, 77, 64, 0.08);
+            --bg: #F8F8F5; 
+            --white: #FFFFFF;
+            --text-dark: #2C3E50;
+            --text-muted: #606F7B;
+            --border: #D1D5DB;
+            --discount-color: #2E7D32; 
+            --danger: #E53935;
+            --warning-bg: #FFFBEB; 
+            --warning-border: #F59E0B;
+            --warning-text: #B45309;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-dark);
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .top-header {
+            width: 100%;
+            background-color: var(--white);
+            text-align: center;
+            padding-top: 20px;
+            position: relative; 
+        }
+
+        .header-logo-top {
+            width: 80%;
+            max-width: 300px;
+            height: auto;
+            display: inline-block;
+            margin-bottom: -1px; 
+        }
+
+        .shape-divider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg); 
+        }
+
+        .shape-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 60px; 
+        }
+
+        .shape-divider .shape-fill { fill: var(--bg); }
+
+        .container {
+            max-width: 600px; 
+            margin: 0 auto;
+            padding: 0 15px 120px; 
+            position: relative;
+            z-index: 10; 
+        }
+
+        header.content-header { text-align: center; margin-bottom: 25px; margin-top: 15px; }
+        header.content-header h1 { font-size: 1.7rem; margin-bottom: 5px; }
+
+        .section-title {
+            margin: 35px 0 15px;
+            font-size: 1.3rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+
+        .typing-container { text-align: center; margin-bottom: 15px; min-height: 40px; }
+        
+        .payment-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            display: inline;
+        }
+
+        .typing-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.1em;
+            background-color: var(--primary);
+            vertical-align: text-bottom;
+            margin-left: 3px;
+            animation: blinkCursor 0.8s step-end infinite;
+        }
+
+        @keyframes blinkCursor {
+            from, to { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        .payment-notice {
+            background-color: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            border-radius: 4px;
+            padding: 12px 15px;
+            margin: 15px 0 15px;
+            font-size: 0.85rem;
+            color: var(--warning-text);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.4;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+        .payment-notice strong { font-weight: 700; display: block; margin-bottom: 2px; color: #92400E; }
+
+        .discount-persistent-notice {
+            background-color: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            border-radius: 4px;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            color: var(--warning-text);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.4;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+        .discount-persistent-notice strong { font-weight: 700; display: block; margin-bottom: 2px; color: #92400E; }
+
+        .conflict-alert {
+            background-color: #FEF08A;
+            border: 1px solid #EAB308;
+            color: #B91C1C;
+            padding: 10px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: normal;
+        }
+
+        .card {
+            background-color: var(--white); border-radius: 8px; padding: 18px;
+            margin-bottom: 15px; border: 1px solid rgba(0, 77, 64, 0.08);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        .card-combo { border-left: 4px solid var(--primary); }
+
+        .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+        .card-title { font-size: 1.1rem; }
+        .card-body { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px; }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px 12px;
+            margin-bottom: 12px;
+        }
+        @media (max-width: 480px) {
+            .checkbox-grid { grid-template-columns: 1fr; }
+        }
+
+        .checkbox-label { display: flex; align-items: center; font-size: 0.85rem; cursor: pointer; color: var(--text-dark); }
+        .checkbox-label input { margin-right: 8px; accent-color: var(--primary); width: 16px; height: 16px; }
+
+        .card-summary-box {
+            background-color: rgba(0, 77, 64, 0.03);
+            border-top: 1px dashed var(--border);
+            padding-top: 10px;
+            margin-top: 10px;
+            font-size: 0.8rem;
+            color: var(--text-dark);
+        }
+        .card-summary-line {
+            display: flex;
+            justify-content: space-between;
+            padding: 2px 0;
+        }
+        .card-summary-line span:first-child {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .btn-outline {
+            display: block; width: 100%; background-color: var(--primary-very-light);
+            color: var(--primary); border: 1px solid rgba(0, 77, 64, 0.2);
+            padding: 10px; border-radius: 6px; font-size: 0.85rem;
+            font-weight: 600; cursor: pointer; text-align: center; transition: 0.2s;
+        }
+        .btn-outline:hover { background-color: rgba(0, 77, 64, 0.15); }
+
+        .btn-solid {
+            display: block; width: 100%; background-color: var(--primary);
+            color: var(--white); border: none; padding: 12px;
+            border-radius: 6px; font-size: 0.9rem; font-weight: 600;
+            cursor: pointer; text-align: center; transition: 0.2s; text-decoration: none;
+        }
+
+        .modal-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6); z-index: 1000; align-items: center; justify-content: center;
+        }
+        .modal-content {
+            background: var(--white); width: 100%; max-width: 600px;
+            border-radius: 16px; padding: 25px 20px; max-height: 90vh;
+            overflow-y: auto; position: relative;
+        }
+        .modal-bottom { align-items: flex-end; }
+        .modal-bottom .modal-content {
+            border-radius: 16px 16px 0 0;
+            animation: slideUp 0.3s ease-out;
+        }
+        @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+
+        .modal-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 10px;
+        }
+        .close-modal { background: none; border: none; font-size: 1.5rem; color: var(--text-muted); cursor: pointer; }
+
+        /* Pop-up Central de Notificação */
+        .combo-alert-popup {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5); z-index: 2000; align-items: center; justify-content: center;
+            padding: 20px;
+        }
+        .combo-alert-card {
+            background: var(--white); width: 100%; max-width: 400px; border-radius: 12px;
+            padding: 25px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: scaleIn 0.25s ease-out;
+        }
+        @keyframes scaleIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .combo-alert-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--primary); margin-bottom: 10px; }
+        .combo-alert-text { font-size: 0.9rem; color: var(--text-dark); margin-bottom: 20px; line-height: 1.5; }
+
+        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px dashed var(--border); }
+        .cart-item-info h4 { font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--text-dark); margin-bottom: 2px; }
+        .cart-item-info span { font-size: 0.75rem; color: var(--text-muted); background: #f0f0f0; padding: 2px 6px; border-radius: 4px; }
+        .cart-item-price { text-align: right; }
+        .price-new { font-size: 0.95rem; font-weight: 600; color: var(--primary); }
+        .price-de { font-size: 0.75rem; color: var(--text-muted); text-decoration: line-through; display: block; }
+        .btn-remove { background: none; border: none; color: var(--danger); font-size: 0.75rem; cursor: pointer; margin-top: 4px; text-decoration: underline; }
+        .btn-details { background: none; border: none; color: var(--primary); font-size: 0.75rem; cursor: pointer; margin-top: 4px; margin-left: 10px; text-decoration: underline; font-weight: 600; }
+
+        .cart-summary { background: rgba(0, 77, 64, 0.03); padding: 15px; border-radius: 8px; margin: 15px 0; }
+        .summary-row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.9rem; }
+        .summary-total { font-weight: 600; font-size: 1.1rem; color: var(--primary); border-top: 1px solid var(--border); padding-top: 10px; margin-top: 5px; }
+
+        .cart-actions { display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px; }
+        .btn-clear { width: 100%; background: none; border: 1px solid var(--border); color: var(--text-muted); padding: 10px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; }
+        
+        .btn-add-more { 
+            width: 100vw; max-width: 100%;
+            background: var(--primary-very-light); 
+            color: var(--primary); 
+            border: 1px solid rgba(0, 77, 64, 0.2); 
+            padding: 10px; 
+            border-radius: 6px; 
+            cursor: pointer; 
+            font-size: 0.85rem; 
+            font-weight: 600; 
+            transition: 0.2s;
+        }
+        
+        .payment-selector { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; margin-top: 5px; margin-bottom: 15px; font-family: 'Inter', sans-serif; color: var(--text-dark); }
+
+        .faq-section { margin-top: 40px; padding-top: 40px; border-top: 1px solid var(--border); }
+        .faq-header { text-align: center; margin-bottom: 30px; }
+        .faq-subtitle { color: var(--text-muted); font-style: italic; font-size: 0.95rem; margin-top: 5px; }
+        .faq-item {
+            background-color: var(--white); border-radius: 12px; margin-bottom: 12px;
+            border: 1px solid rgba(0, 77, 64, 0.08); box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            overflow: hidden; transition: all 0.3s ease;
+        }
+        .faq-question {
+            width: 100%; text-align: left; padding: 18px 20px; background: none; border: none;
+            font-family: 'Inter', sans-serif; font-weight: 600; color: var(--primary); font-size: 0.95rem;
+            cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+        }
+        .faq-question svg { width: 20px; height: 20px; transition: transform 0.3s ease; flex-shrink: 0; margin-left: 15px; }
+        .faq-question.active svg { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background-color: var(--white); }
+        .faq-answer-inner { padding: 0 20px 20px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+
+        .cart-bar {
+            display: none; position: fixed; bottom: 0; left: 0; width: 100%;
+            background: var(--primary); color: var(--white); padding: 15px 20px;
+            z-index: 900; box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+        }
+        .cart-content { max-width: 600px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .cart-info { display: flex; flex-direction: column; }
+        .cart-info-title { font-size: 0.8rem; opacity: 0.8; }
+        .cart-info-price { font-size: 1.1rem; font-weight: 600; }
+        .btn-view-cart { background: var(--white); color: var(--primary); border: none; padding: 10px 20px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; }
+
+        #chat-button {
+            position: fixed;
+            bottom: 90px; 
+            right: 20px;
+            padding: 12px 24px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 30px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,77,64,0.3);
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+        #chat-button:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 6px 20px rgba(0,77,64,0.4);
+        }
+
+        #chat-window{
+            position: fixed;
+            bottom: 150px;
+            right: 20px;
+            width: 350px;
+            max-width: calc(100vw - 40px);
+            height: 480px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+            display: none;
+            flex-direction: column;
+            z-index: 1000;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background: var(--primary);
+            color: white;
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Inter', sans-serif;
+        }
+        .close-chat {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0.8;
+        }
+        .close-chat:hover { opacity: 1; }
+
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background: var(--bg);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 0.9rem;
+        }
+
+        .message {
+            max-width: 85%;
+            padding: 10px 12px;
+            border-radius: 12px;
+            line-height: 1.4;
+        }
+        .bot-message {
+            background: white;
+            color: var(--text-dark);
+            border: 1px solid var(--border);
+            align-self: flex-start;
+            border-bottom-left-radius: 2px;
+        }
+        .user-message {
+            background: var(--primary-light);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 2px;
+        }
+        
+        .loading-dots {
+            display: flex; gap: 4px; padding: 5px;
+        }
+        .loading-dots span {
+            width: 6px; height: 6px; background: var(--text-muted); border-radius: 50%;
+            animation: chatBounce 1.4s infinite ease-in-out both;
+        }
+        .loading-dots span:nth-child(1) { animation-delay: -0.32s; }
+        .loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes chatBounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+
+        .chat-input-area {
+            display: flex;
+            padding: 10px;
+            background: white;
+            border-top: 1px solid var(--border);
+        }
+        #chat-input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            outline: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+        }
+        #chat-input:focus { border-color: var(--primary); }
+        #send-button {
+            background: none;
+            border: none;
+            color: var(--primary);
+            padding: 0 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #send-button svg { width: 22px; height: 22px; transform: rotate(-45deg); }
+        #send-button:disabled { opacity: 0.5; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+
+<header class="top-header">
+    <img src="/images/logotipo-fundo-transparente.png" alt="Grazielle Diniz Estética" class="header-logo-top">
+    <div class="shape-divider">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,1.79,87.31-5.62V0Z" class="shape-fill"></path>
+        </svg>
+    </div>
+</header>
+
+<div class="container">
+    <header class="content-header">
+        <h1>Planos e Pacotes</h1>
+    </header>
+
+    <div class="typing-container">
+        <h3 class="payment-title" id="typed-text"></h3><span class="typing-cursor"></span>
+    </div>
+    
+    <div class="payment-notice" id="payment-notice"></div>
+    
+    <div class="discount-persistent-notice">
+        <strong>Monte seu Combo:</strong> ao acrescentar mais de uma região ao seu carrinho, você garante automaticamente descontos progressivos especiais em cada região adicionada!
+    </div>
+
+    <div class="discount-persistent-notice">
+        <strong>Aviso Importante:</strong> Todos os pacotes são compostos por 10 sessões.
+    </div>
+    
+    <div id="cards-container"></div>
+
+    <h2 class="section-title">Combos Mais Procurados</h2>
+    <div id="combos-container"></div>
+
+    <!-- SESSÃO FAQ -->
+    <div class="faq-section" id="faq">
+        <div class="faq-header">
+            <h2 class="section-title" style="border:none; margin-bottom: 5px;">Perguntas Frequentes</h2>
+            <p class="faq-subtitle">Tire todas as suas dúvidas de maneira simples e transparente</p>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>Por que escolher a Grazielle Diniz para o tratamento de epilação a laser?</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    A Grazielle Diniz é Esteticista e Cosmetóloga há mais de 8 anos. Diferente de franquias, a própria Grazielle realiza as sessões e acompanhamento durante todo o tratamento, possui excelente reputação e, por ter equipamento próprio, oferece flexibilidade de horários, sem se prender a datas engessadas de "laser day". Além disso, possui formas de pagamento flexíveis, como crédito recorrente e PIX parcelado.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>O resultado da depilação a laser dura para sempre?</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    A depilação a laser proporciona uma redução duradoura de até 90% dos pelos, deixando a pele lisa por muito mais tempo e reduzindo a necessidade de depilação frequente. Embora alterações hormonais possam provocar o aparecimento de novos pelos ao longo dos anos, esses casos costumam ser resolvidos com manutenções esporádicas.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>Quantas sessões são necessárias em média?</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    Na maioria dos casos, recomenda-se fazer de 8 a 10 sessões para conseguir uma redução satisfatória e duradoura. Esse número varia porque o laser funciona melhor nos fios que estão na fase ativa de crescimento.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>Qual o intervalo de tempo necessário entre uma sessão e outra?</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    O intervalo costuma ser de 30 a 45 dias para áreas do corpo e cerca de 30 dias para o rosto. Respeitar esse tempo é importante para esperar os fios nascerem no ciclo certo para a próxima aplicação.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>Posso raspar a área tratada com gilete durante o tratamento?</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    Sim, você pode e deve usar a gilete se os pelos crescerem entre as sessões. Como a gilete corta o fio sem arrancar a raiz, ela mantém a estrutura necessária para o laser agir no próximo atendimento.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>Posso usar cera, linha ou pinça entre as sessões de laser?</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    Não. Qualquer método que arranque o pelo pela raiz (como cera, pinça ou linha) deve ser evitado durante o tratamento. Se a raiz for arrancada, o laser não encontra o canal para agir.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>O procedimento ajuda a clarear manchas na pele?</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    Sim, ajuda bastante. Ao parar de agredir a região com lâminas ou cera quente (que provocam pequenos machucados e atrito), a pele ganha espaço para se recuperar e clarear de forma natural.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>Homens também podem fazer a depilação a laser?</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    Com certeza. O público masculino procura muito o tratamento para reduzir irritações na barba e pescoço, além de eliminar pelos das costas, peito e nuca com total praticidade.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>Existe alguma idade mínima para começar?</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    Não existe uma idade mínima fixa definida por lei ou pela medicina, mas o tratamento depende do amadurecimento hormonal. Recomendamos iniciar após a primeira menstruação (menarca) em meninas, ou quando os pelos estiverem grossos e formados nos meninos, o que costuma ocorrer por volta dos 12 a 14 anos, necessitando da autorização clara dos pais ou responsáveis para menores de idade.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>Pessoas de pele negra podem fazer o procedimento?</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    Sim. A tecnologia moderna permite ajustar o equipamento para atender peles negras com total segurança, focando a energia direto na raiz do pelo e preservando a superfície da pele.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>A aplicação do laser pode causar câncer de pele?</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    Não. O laser utilizado na estética emite apenas energia luminosa que se transforma em calor na raiz do pelo. Ele não altera as células da derme e é totalmente diferente das radiações que causam problemas de saúde.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>Quanto tempo demora cada sessão de aplicação?</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    É um processo rápido. Regiões pequenas (como buço ou axilas) demoram entre 5 a 10 minutos. Já regiões maiores (como pernas inteiras ou costas) podem levar de 30 a 40 minutos.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>Posso dar continuidade ao tratamento durante o verão?</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    Sim, o tratamento pode continuar no verão do Guarujá. A única recomendação é intensificar o uso do protetor solar FPS 30 ou superior nas áreas que estão recebendo o laser e evitar o sol intenso direto.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>Posso ir à praia logo após fazer a sessão?</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    Não é o mais indicado. Como a derme fica levemente sensível e aquecida após os disparos, recomendamos evitar sol direto, banhos de mar ou piscina por no mínimo 7 dias para evitar irritações desnecessárias.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>Quem tem tatuagem pode aplicar o laser em cima do desenho?</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    O laser não pode ser disparado diretamente sobre a tatuagem, pois a luz seria atraída pela tinta escura, o que causaria machucados. Nós isolamos e protegemos o desenho para aplicar o laser somente nas áreas livres ao redor.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>Quem usa Roacutan ou trata SOP (Ovário Policístico) pode fazer?</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    Quem usa Roacutan precisa esperar cerca de 6 meses após o fim do remédio, pois a medicação deixa a pele muito fina e sensível. Quem trata SOP (Síndrome do Ovário Policístico) pode fazer normalmente, sabendo que as variações hormonais da síndrome podem exigir mais sessões e manutenções regulares.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Popup Central de Notificação Geral (Avisos de Conflito e Combos) -->
+<div class="combo-alert-popup" id="combo-alert-popup">
+    <div class="combo-alert-card">
+        <h3 class="combo-alert-title" id="popup-title">Aviso Importante ✨</h3>
+        <p class="combo-alert-text" id="combo-alert-text">Mensagem do sistema...</p>
+        <button class="btn-solid" onclick="closeComboAlert()">Entendido</button>
+    </div>
+</div>
+
+<!-- Modal do Carrinho Detalhado -->
+<div class="modal-overlay modal-bottom" id="cart-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Seu Pacote</h3>
+            <button class="close-modal" onclick="closeModal('cart-modal')">×</button>
+        </div>
+
+        <div id="conflict-alert-box"></div>
+        <div id="cart-items-list"></div>
+
+        <div class="cart-summary" id="cart-summary"></div>
+
+        <div style="margin-top: 15px; margin-bottom: 15px; border-top: 1px dashed var(--border); padding-top: 12px;">
+            <label for="cart-payment-method" style="font-size: 0.85rem; font-weight: 600; color: var(--primary); display: block; margin-bottom: 4px;">Forma de Pagamento:</label>
+            <span style="font-size: 0.75rem; color: #DC2626; background-color: #FEF08A; padding: 4px 8px; border-radius: 4px; display: block; margin-bottom: 8px; font-weight: normal;">Os descontos são personalizados de acordo com a forma de pagamento escolhida.</span>
+            <select id="cart-payment-method" class="payment-selector" onchange="changeMethod(this.value); buildCartView();" style="margin-top: 0; margin-bottom: 0;">
+                <option value="" disabled selected>Selecione a forma de pagamento...</option>
+            </select>
+        </div>
+
+        <div class="cart-actions">
+            <button class="btn-add-more" onclick="closeModal('cart-modal')">Adicionar mais regiões</button>
+            <button class="btn-clear" onclick="clearCart()">Limpar Carrinho</button>
+        </div>
+
+        <button class="btn-solid" onclick="sendToWhatsApp(event)">Enviar Pedido para WhatsApp</button>
+    </div>
+</div>
+
+<!-- Modal Detalhes do Combo -->
+<div class="modal-overlay" id="details-modal">
+    <div class="modal-content" style="max-width: 400px;">
+        <div class="modal-header">
+            <h3 id="details-modal-title">Detalhamento do Combo</h3>
+            <button class="close-modal" onclick="closeModal('details-modal')">×</button>
+        </div>
+        <div id="details-modal-body" style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;"></div>
+        <button class="btn-solid" onclick="closeModal('details-modal')">Fechar</button>
+    </div>
+</div>
+
+<!-- Barra Flutuante -->
+<div class="cart-bar" id="cart-bar">
+    <div class="cart-content">
+        <div class="cart-info">
+            <span class="cart-info-title" id="bar-items-count">0 área(s)</span>
+            <span class="cart-info-price" id="bar-total-price">R$ 0,00</span>
+        </div>
+        <button class="btn-view-cart" onclick="openCartModal()">Ver Carrinho</button>
+    </div>
+</div>
+
+<!-- SESSÃO DO CHATBOT FLUTUANTE -->
+<div id="chat-button" onclick="toggleChat()">
+    ✨ Posso ajudar?
+</div>
+
+<div id="chat-window">
+    <div class="chat-header">
+        <div>
+            <strong>Assistente Grazi</strong>
+            <span style="font-size: 0.7rem; display: block; font-weight: normal; opacity: 0.8;">Tire suas dúvidas rápido</span>
+        </div>
+        <button class="close-chat" onclick="toggleChat()">×</button>
+    </div>
+    
+    <div class="chat-messages" id="chat-messages">
+        <div class="message bot-message">
+            Olá! Sou a assistente virtual da Grazi. Como posso te ajudar com os pacotes e tratamentos de laser hoje? ✨
+        </div>
+    </div>
+    
+    <div class="chat-input-area">
+        <input type="text" id="chat-input" placeholder="Digite sua dúvida..." onkeypress="handleChatEnter(event)">
+        <button id="send-button" onclick="sendMessage()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3.478 2.405a1.153 1.153 0 00-.81 1.706l4.24 9.139-4.24 9.139a1.153 1.153 0 001.378 1.576l17.418-7.79a1.153 1.153 0 000-2.102L4.046 6.275a1.153 1.153 0 00-1.378.156z"/></svg>
+        </button>
+    </div>
+</div>
+
+<script>
+    const pricing = {
+        cartao_total: { label: "Cartão de Crédito", notice: "Pagamento total no cartão de crédito em até 10x sem juros.", inst: 10, sessions: 10, data: { PP: 349, P: 499, M: 799, G: 899, GG: 1099 } },
+        pix_vista: { label: "PIX à Vista", notice: "Pagamento à vista com 5% de desconto especial.", inst: 1, sessions: 10, data: { PP: 331.55, P: 474.05, M: 759.05, G: 854.05, GG: 1044.05 } },
+        recorrente: { label: "Recorrente Cartão", notice: "Pagamento com débito automático mensal sem comprometer o limite do cartão de crédito.", inst: 10, sessions: 10, data: { PP: 399, P: 549, M: 899, G: 999, GG: 1199 } },
+        boleto: { label: "Pix Parcelado", notice: "Pagamento mensal via pix parcelado com data fixa. O não pagamento da mensalidade impede a realização da sessão.", inst: 10, sessions: 10, data: { PP: 449, P: 599, M: 949, G: 1099, GG: 1299 } },
+        avulso: { label: "Sessão Avulsa", notice: "Pagamento por sessão individual para manutenção.", inst: 1, sessions: 1, data: { PP: 50, P: 70, M: 100, G: 120, GG: 150 } }
+    };
+
+    const areaLists = {
+        PP: ["Buço", "Mento (queixo)", "Glabela", "Maçã do Rosto", "Testa", "Costeletas"],
+        P: ["Axilas", "Virilha Cavada", "Seios (decote)", "Aréolas", "Perianal", "Linha do Umbigo", "Mãos/Dedos", "Pés/Dedos", "Cóccix", "Nuca"],
+        M: ["Pescoço/Faixa da Barba", "Ombros", "Virilha Completa (s/ ânus)", "Glúteos"],
+        G: ["Meia Perna", "Braço", "Antebraço", "Abdômen"],
+        GG: ["Tórax (Masculino)", "Coxas", "Costas Superior", "Costas Inferior"]
+    };
+
+    const sizeNames = { PP: "Tamanho PP", P: "Tamanho P", M: "Tamanho M", G: "Tamanho G", GG: "Tamanho GG" };
+    
+    const comboDefinitions = [
+        { 
+            id: "essencial_1",
+            title: "Essencial 1", 
+            desc: "Inclui: Meia Perna, Virilha Completa, Perianal, Axilas e Buço.", 
+            areas: [
+                {id: 'Meia Perna', size: 'G'}, 
+                {id: 'Virilha Completa (s/ ânus)', size: 'M'}, 
+                {id: 'Perianal', size: 'P'},
+                {id: 'Axilas', size: 'P'},
+                {id: 'Buço', size: 'PP'}
+            ] 
+        },
+        { 
+            id: "essencial_2",
+            title: "Essencial 2", 
+            desc: "Inclui: Virilha Completa, Perianal, Axilas e Buço.", 
+            areas: [
+                {id: 'Virilha Completa (s/ ânus)', size: 'M'}, 
+                {id: 'Perianal', size: 'P'},
+                {id: 'Axilas', size: 'P'},
+                {id: 'Buço', size: 'PP'}
+            ] 
+        },
+        { 
+            id: "essencial_3",
+            title: "Essencial 3", 
+            desc: "Inclui: Virilha Completa com Perianal e Axilas.", 
+            areas: [
+                {id: 'Virilha Completa (s/ ânus)', size: 'M'}, 
+                {id: 'Perianal', size: 'P'},
+                {id: 'Axilas', size: 'P'}
+            ] 
+        },
+        { 
+            id: "braco_completo",
+            title: "Braço Completo", 
+            desc: "Inclui: Braço e Antebraço.", 
+            areas: [
+                {id: 'Braço', size: 'G'}, 
+                {id: 'Antebraço', size: 'G'}
+            ] 
+        },
+        { title: "Rosto Completo", desc: "Buço, Mento (queixo), Costeletas e Maçã do Rosto.", areas: [{id: 'Buço', size: 'PP'}, {id: 'Mento (queixo)', size: 'PP'}, {id: 'Costeletas', size: 'PP'}, {id: 'Maçã do Rosto', size: 'PP'}] },
+        { title: "Perna Completa", desc: "Inclui: Coxas e Meia Perna.", areas: [{id: 'Coxas', size: 'GG'}, {id: 'Meia Perna', size: 'G'}] },
+        { title: "Barba Completa", desc: "Inclui: Pescoço/Faixa da Barba, Buço, Mento (queixo), Costeletas e Maçã do Rosto.", areas: [{id: 'Pescoço/Faixa da Barba', size: 'M'}, {id: 'Buço', size: 'PP'}, {id: 'Mento (queixo)', size: 'PP'}, {id: 'Costeletas', size: 'PP'}, {id: 'Maçã do Rosto', size: 'PP'}] },
+        { title: "Tronco", desc: "Tórax e Abdômen.", areas: [{id: 'Tórax (Masculino)', size: 'GG'}, {id: 'Abdômen', size: 'G'}] },
+        { title: "Costas Completas", desc: "Costas superior e inferior para maior conforto.", areas: [{id: 'Costas Superior', size: 'GG'}, {id: 'Costas Inferior', size: 'GG'}] }
+    ];
+
+    let currentMethod = 'cartao_total';
+    let selectedAreas = []; 
+    let selectedCombos = []; 
+    let lastConflictMessage = '';
+
+    const phraseToType = "Selecione a forma de pagamento desejada para obter descontos personalizados:";
+    let charIndex = 0;
+    const typingSpeed = 35; 
+
+    function typeWriterEffect() {
+        if (charIndex < phraseToType.length) {
+            document.getElementById("typed-text").innerHTML += phraseToType.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeWriterEffect, typingSpeed);
+        }
+    }
+
+    function toggleFaq(button) {
+        button.classList.toggle('active');
+        const answer = button.nextElementSibling;
+        if (button.classList.contains('active')) {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+        } else {
+            answer.style.maxHeight = "0";
+        }
+    }
+
+    window.onload = function() {
+        renderCards();
+        populatePaymentDropdown();
+        document.getElementById('payment-notice').innerHTML = `<strong>Importante:</strong> ${pricing[currentMethod].notice}`;
+        setTimeout(typeWriterEffect, 300);
+    };
+
+    function formatMoney(value) { return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); }
+
+    function changeMethod(method) {
+        currentMethod = method;
+        document.getElementById('payment-notice').innerHTML = `<strong>Importante:</strong> ${pricing[currentMethod].notice}`;
+        renderCards();
+        updateFloatingBar();
+        const dropdown = document.getElementById('cart-payment-method');
+        if (dropdown) dropdown.value = method;
+    }
+
+    function populatePaymentDropdown() {
+        const dropdown = document.getElementById('cart-payment-method');
+        if (dropdown) {
+            dropdown.innerHTML = `<option value="" disabled selected>Selecione a forma de pagamento...</option>` + Object.keys(pricing).map(key => 
+                `<option value="${key}">${pricing[key].label}</option>`
+            ).join('');
+        }
+    }
+
+    function getDiscountMultiplier(index) {
+        if (index === 0) return 1.00;
+        if (index === 1) return 0.80;
+        if (index === 2) return 0.75;
+        if (index === 3) return 0.60;
+        if (index === 4 || index === 5) return 0.50;
+        return 0.40;
+    }
+
+    function getBasePriceByMethodAndSize(method, size) {
+        return pricing[method].data[size];
+    }
+
+    function calculateSimulatedCart(simulatedAreas) {
+        const pricesObj = pricing[currentMethod].data;
+        let items = [...simulatedAreas].map(a => {
+            let matchedSize = a.size;
+            if (!matchedSize) {
+                for (let s in areaLists) {
+                    if (areaLists[s].includes(a.id)) {
+                        matchedSize = s;
+                        break;
+                    }
+                }
+            }
+            return { id: a.id, size: matchedSize };
+        }).sort((a, b) => pricesObj[b.size] - pricesObj[a.size]);
+
+        let totalFull = 0;
+        let totalDiscounted = 0;
+
+        items.forEach((item, index) => {
+            let basePrice = pricesObj[item.size];
+            totalFull += basePrice;
+            totalDiscounted += basePrice * getDiscountMultiplier(index);
+        });
+        return { totalFull, totalDiscounted };
+    }
+
+    function renderCards() {
+        const container = document.getElementById('cards-container');
+        
+        container.innerHTML = Object.keys(areaLists).map(size => {
+            const sizeAreas = areaLists[size];
+            const checkedInThisSize = selectedAreas.filter(a => a.size === size);
+            
+            let summaryHTML = '';
+            if (checkedInThisSize.length > 0) {
+                const methodsToShow = [
+                    { key: 'avulso', label: 'sessão avulsa' },
+                    { key: 'boleto', label: 'pix parcelado' },
+                    { key: 'recorrente', label: 'Recorrente Cartão' },
+                    { key: 'cartao_total', label: 'Cartão de Crédito' },
+                    { key: 'pix_vista', label: 'pagamento total no pix' }
+                ];
+
+                let lines = methodsToShow.map(m => {
+                    const savedMethod = currentMethod;
+                    currentMethod = m.key;
+                    const calc = calculateSimulatedCart(checkedInThisSize);
+                    const sessCount = pricing[m.key].sessions;
+                    const porSessao = calc.totalDiscounted / sessCount;
+                    currentMethod = savedMethod;
+
+                    return `<div class="card-summary-line"><span>${formatMoney(porSessao)} por sessão</span> <span>- ${m.label}</span></div>`;
+                }).join('');
+
+                summaryHTML = `<div class="card-summary-box">${lines}</div>`;
+            }
+
+            return `
+            <div class="card">
+                <div class="card-header" style="margin-bottom: 12px;">
+                    <h3 class="card-title">${sizeNames[size]}</h3>
+                </div>
+                <div class="checkbox-grid">
+                    ${sizeAreas.map(area => {
+                        const isChecked = selectedAreas.some(a => a.id === area) ? 'checked' : '';
+                        return `
+                        <label class="checkbox-label">
+                            <input type="checkbox" value="${area}" data-size="${size}" onchange="handleCheckboxChange(this)" ${isChecked}>
+                            ${area}
+                        </label>`;
+                    }).join('')}
+                </div>
+                ${summaryHTML}
+            </div>`;
+        }).join('');
+
+        renderCombos();
+    }
+
+    function renderCombos() {
+        const container = document.getElementById('combos-container');
+        container.innerHTML = '';
+        
+        comboDefinitions.forEach((combo, idx) => {
+            const isComboSelected = selectedCombos.some(c => c.title === combo.title);
+
+            let summaryHTML = '';
+            if (isComboSelected) {
+                const methodsToShow = [
+                    { key: 'avulso', label: 'sessão avulsa' },
+                    { key: 'boleto', label: 'pix parcelado' },
+                    { key: 'recorrente', label: 'Recorrente Cartão' },
+                    { key: 'cartao_total', label: 'Cartão de Crédito' },
+                    { key: 'pix_vista', label: 'pagamento total no pix' }
+                ];
+
+                let lines = methodsToShow.map(m => {
+                    const savedMethod = currentMethod;
+                    currentMethod = m.key;
+                    const calc = calculateSimulatedCart(combo.areas);
+                    const sessCount = pricing[m.key].sessions;
+                    const porSessao = calc.totalDiscounted / sessCount;
+                    currentMethod = savedMethod;
+
+                    return `<div class="card-summary-line"><span>${formatMoney(porSessao)} por sessão</span> <span>- ${m.label}</span></div>`;
+                }).join('');
+
+                summaryHTML = `<div class="card-summary-box">${lines}</div>`;
+            }
+
+            container.innerHTML += `
+            <div class="card card-combo">
+                <div class="card-header" style="margin-bottom: 6px;">
+                    <h3 class="card-title">${combo.title}</h3>
+                </div>
+                <div class="card-body" style="margin-bottom: 12px;">${combo.desc}</div>
+                <button class="btn-outline" onclick="toggleComboSelection(${idx})">${isComboSelected ? 'Remover Combo' : 'Selecionar Combo'}</button>
+                ${summaryHTML}
+            </div>`;
+        });
+    }
+
+    function handleCheckboxChange(checkbox) {
+        const areaId = checkbox.value;
+        const size = checkbox.dataset.size;
+
+        if (checkbox.checked) {
+            // Verificar se a região já está inclusa em algum combo ativo
+            let activeComboWithArea = selectedCombos.find(combo => combo.areas.some(ca => ca.id === areaId));
+            if (activeComboWithArea) {
+                checkbox.checked = false;
+                showPopupAlert("Região Inclusa em Pacote", `Você já adicionou o combo ${activeComboWithArea.title} que inclui a região ${areaId}.`);
+                return;
+            }
+
+            // Regra: Virilha Completa x Virilha Cavada (Completa prevalece)
+            if (areaId === "Virilha Cavada") {
+                let hasCompleta = selectedAreas.some(a => a.id === "Virilha Completa (s/ ânus)") || 
+                                  selectedCombos.some(c => c.areas.some(ca => ca.id === "Virilha Completa (s/ ânus)"));
+                if (hasCompleta) {
+                    checkbox.checked = false;
+                    showPopupAlert("Aviso de Região", "A Virilha Completa já está selecionada e engloba a cavada.");
+                    renderCards();
+                    return;
+                }
+            }
+
+            if (areaId === "Virilha Completa (s/ ânus)") {
+                selectedAreas = selectedAreas.filter(a => a.id !== "Virilha Cavada");
+            }
+
+            selectedAreas.push({ id: areaId, size: size });
+            lastConflictMessage = '';
+        } else {
+            selectedAreas = selectedAreas.filter(a => a.id !== areaId);
+            lastConflictMessage = '';
+        }
+
+        checkAndAutoConvertCombos();
+        renderCards();
+        updateFloatingBar();
+    }
+
+    function checkAndAutoConvertCombos() {
+        let sortedCombos = [...comboDefinitions].sort((a, b) => b.areas.length - a.areas.length);
+
+        sortedCombos.forEach(combo => {
+            let comboAreaIds = combo.areas.map(a => a.id);
+            let userHasAll = comboAreaIds.every(cId => selectedAreas.some(sa => sa.id === cId));
+            let alreadySelected = selectedCombos.some(c => c.title === combo.title);
+
+            if (userHasAll && !alreadySelected) {
+                selectedCombos.push(combo);
+                selectedAreas = selectedAreas.filter(sa => !comboAreaIds.includes(sa.id));
+                showPopupAlert("Pacote Promocional Aplicado! ✨", `As regiões selecionadas formam o pacote "${combo.title}" e foram convertidas automaticamente para garantir o melhor preço para você!`);
+            }
+        });
+
+        if (selectedCombos.length > 1) {
+            let optimizedCombos = [];
+            selectedCombos.forEach(c1 => {
+                let isSubset = selectedCombos.some(c2 => c2.title !== c1.title && c1.areas.every(a1 => c2.areas.some(a2 => a2.id === a1.id)));
+                if (!isSubset) {
+                    optimizedCombos.push(c1);
+                }
+            });
+            selectedCombos = optimizedCombos;
+        }
+    }
+
+    function showPopupAlert(title, text) {
+        document.getElementById('popup-title').innerText = title;
+        document.getElementById('combo-alert-text').innerText = text;
+        document.getElementById('combo-alert-popup').style.display = 'flex';
+    }
+
+    function closeComboAlert() {
+        document.getElementById('combo-alert-popup').style.display = 'none';
+    }
+
+    function toggleComboSelection(comboIndex) {
+        const comboObj = comboDefinitions[comboIndex];
+        const exists = selectedCombos.some(c => c.title === comboObj.title);
+
+        if (!exists) {
+            // Impedir selecionar combo que conflite diretamente com outro combo já ativo (ex: Essencial 1 e Essencial 3)
+            let conflictingCombo = selectedCombos.find(existingCombo => {
+                return comboObj.areas.some(a1 => existingCombo.areas.some(a2 => a2.id === a1.id));
+            });
+
+            if (conflictingCombo) {
+                showPopupAlert("Conflito de Pacotes", `Você já possui o combo "${conflictingCombo.title}" ativo que compartilha regiões com o "${comboObj.title}".`);
+                renderCards();
+                return;
+            }
+
+            let hasCompletaInNew = comboObj.areas.some(a => a.id === "Virilha Completa (s/ ânus)");
+            if (hasCompletaInNew) {
+                selectedAreas = selectedAreas.filter(a => a.id !== "Virilha Cavada");
+            }
+
+            selectedCombos.push(comboObj);
+            let removedNames = [];
+            selectedAreas = selectedAreas.filter(sa => {
+                let overlap = comboObj.areas.some(ca => ca.id === sa.id);
+                if (overlap) removedNames.push(sa.id);
+                return !overlap;
+            });
+
+            if (removedNames.length > 0) {
+                lastConflictMessage = `O combo "${comboObj.title}" foi adicionado. Região(ões) avulsa(s) (${removedNames.join(', ')}) removida(s) para evitar duplicação.`;
+            } else {
+                lastConflictMessage = '';
+            }
+        } else {
+            selectedCombos = selectedCombos.filter(c => c.title !== comboObj.title);
+            lastConflictMessage = '';
+        }
+
+        renderCards();
+        updateFloatingBar();
+    }
+
+    function removeArea(id) {
+        selectedAreas = selectedAreas.filter(a => a.id !== id);
+        lastConflictMessage = '';
+        renderCards();
+        updateFloatingBar();
+        if (selectedAreas.length === 0 && selectedCombos.length === 0) {
+            closeModal('cart-modal');
+        } else {
+            buildCartView();
+        }
+    }
+
+    function removeCombo(comboTitle) {
+        selectedCombos = selectedCombos.filter(c => c.title !== comboTitle);
+        lastConflictMessage = '';
+        renderCards();
+        updateFloatingBar();
+        if (selectedAreas.length === 0 && selectedCombos.length === 0) {
+            closeModal('cart-modal');
+        } else {
+            buildCartView();
+        }
+    }
+
+    function clearCart() {
+        selectedAreas = [];
+        selectedCombos = [];
+        lastConflictMessage = '';
+        renderCards();
+        closeModal('cart-modal');
+        updateFloatingBar();
+    }
+
+    // REGRA CORRIGIDA: o desconto progressivo é sempre aplicado sobre a lista
+    // GLOBAL de itens (regiões avulsas + regiões de todos os combos juntas),
+    // ordenada da mais cara para a mais barata. Apenas o item mais caro de
+    // TODO o carrinho fica sem desconto (índice 0); todos os demais recebem
+    // desconto progressivo, não importa de qual combo vieram.
+    function calculateCart() {
+        const pricesObj = pricing[currentMethod].data;
+        
+        let allAreasFlat = [...selectedAreas];
+        selectedCombos.forEach(combo => {
+            combo.areas.forEach(a => {
+                let matchedSize = a.size;
+                if (!matchedSize) {
+                    for (let s in areaLists) {
+                        if (areaLists[s].includes(a.id)) {
+                            matchedSize = s;
+                            break;
+                        }
+                    }
+                }
+                allAreasFlat.push({ id: a.id, size: matchedSize });
+            });
+        });
+
+        let items = [...allAreasFlat].sort((a, b) => pricesObj[b.size] - pricesObj[a.size]);
+        let totalFull = 0;
+        let totalDiscounted = 0;
+        let itemDetails = [];
+
+        items.forEach((item, index) => {
+            let basePrice = pricesObj[item.size];
+            let multiplier = getDiscountMultiplier(index);
+            let finalPrice = basePrice * multiplier;
+
+            totalFull += basePrice;
+            totalDiscounted += finalPrice;
+            
+            itemDetails.push({ ...item, basePrice, finalPrice });
+        });
+
+        // O subtotal de cada combo é a soma dos itens dele DENTRO da lista
+        // global já descontada acima — garante que a soma dos combos bate
+        // exatamente com o total final.
+        let comboSummaries = selectedCombos.map(combo => {
+            let cItems = itemDetails.filter(i => combo.areas.some(ca => ca.id === i.id));
+            let cFull = cItems.reduce((acc, cur) => acc + cur.basePrice, 0);
+            let cDisc = cItems.reduce((acc, cur) => acc + cur.finalPrice, 0);
+            let percentEcon = cFull > 0 ? Math.round(((cFull - cDisc) / cFull) * 100) : 0;
+            return {
+                title: combo.title,
+                desc: combo.desc,
+                areas: combo.areas,
+                totalFull: cFull,
+                totalDiscounted: cDisc,
+                savings: cFull - cDisc,
+                percentEcon: percentEcon > 0 ? percentEcon : 15
+            };
+        });
+
+        return { 
+            items: itemDetails, 
+            combos: comboSummaries,
+            totalFull, 
+            totalDiscounted, 
+            savings: totalFull - totalDiscounted 
+        };
+    }
+
+    function updateFloatingBar() {
+        const bar = document.getElementById('cart-bar');
+        const totalCount = selectedAreas.length + selectedCombos.reduce((acc, c) => acc + c.areas.length, 0);
+        if (totalCount === 0) {
+            bar.style.display = 'none';
+            return;
+        }
+        bar.style.display = 'block';
+        const calc = calculateCart();
+        const isInst = pricing[currentMethod].inst > 1;
+        document.getElementById('bar-items-count').innerText = `${totalCount} item(ns)`;
+        document.getElementById('bar-total-price').innerText = isInst ? `${pricing[currentMethod].inst}x de ${formatMoney(calc.totalDiscounted / pricing[currentMethod].inst)}` : formatMoney(calc.totalDiscounted);
+    }
+
+    function openCartModal() {
+        populatePaymentDropdown();
+        buildCartView();
+        document.getElementById('cart-modal').style.display = 'flex';
+    }
+
+    function closeModal(modalId) { document.getElementById(modalId).style.display = 'none'; }
+
+    function buildCartView() {
+        const dropdown = document.getElementById('cart-payment-method');
+        const isPaymentSelected = dropdown.value !== "";
+        const calc = calculateCart();
+        const listContainer = document.getElementById('cart-items-list');
+        const alertBox = document.getElementById('conflict-alert-box');
+
+        if (lastConflictMessage) {
+            alertBox.innerHTML = `<div class="conflict-alert">${lastConflictMessage}</div>`;
+        } else {
+            alertBox.innerHTML = '';
+        }
+        
+        let htmlContent = '';
+
+        if (calc.combos && calc.combos.length > 0) {
+            htmlContent += calc.combos.map(combo => `
+                <div class="cart-item">
+                    <div class="cart-item-info">
+                        <h4>${combo.title}</h4>
+                        <span>Combo Promocional</span>
+                        <div style="font-size:0.75rem; color:var(--text-muted); margin-top:2px;">${combo.desc}</div>
+                        <div>
+                            <button class="btn-remove" onclick="removeCombo('${combo.title}')">Remover Combo</button>
+                            <button class="btn-details" onclick="openComboDetails('${combo.title}')">Detalhar valores</button>
+                        </div>
+                    </div>
+                    <div class="cart-item-price">
+                        ${isPaymentSelected ? (combo.totalFull !== combo.totalDiscounted ? `<span class="price-de">De: ${formatMoney(combo.totalFull)}</span>` : '') : ''}
+                        <span class="price-new">${isPaymentSelected ? 'Por: ' + formatMoney(combo.totalDiscounted) : '---'}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        if (selectedAreas.length > 0) {
+            let avulsasItems = calc.items.filter(item => selectedAreas.some(sa => sa.id === item.id));
+            htmlContent += avulsasItems.map(item => `
+                <div class="cart-item">
+                    <div class="cart-item-info">
+                        <h4>${item.id}</h4>
+                        <span>${sizeNames[item.size]}</span>
+                        <br><button class="btn-remove" onclick="removeArea('${item.id}')">Remover</button>
+                    </div>
+                    <div class="cart-item-price">
+                        ${isPaymentSelected ? (item.basePrice !== item.finalPrice ? `<span class="price-de">De: ${formatMoney(item.basePrice)}</span>` : '') : ''}
+                        <span class="price-new">${isPaymentSelected ? 'Por: ' + formatMoney(item.finalPrice) : '---'}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        listContainer.innerHTML = htmlContent;
+
+        if (!isPaymentSelected) {
+            document.getElementById('cart-summary').innerHTML = `<div class="summary-row summary-total" style="text-align: center; color: var(--text-muted); font-size: 0.9rem; font-weight: normal;">Selecione a forma de pagamento acima para calcular o valor.</div>`;
+            return;
+        }
+
+        const isInst = pricing[currentMethod].inst > 1;
+        const instCount = pricing[currentMethod].inst;
+        const valFinal = calc.totalDiscounted;
+
+        let summaryHTML = `<div class="summary-row summary-total"><span>Total Final:</span> <span>${formatMoney(valFinal)}</span></div>`;
+        
+        if (isInst) {
+            summaryHTML += `<div class="summary-row" style="justify-content: flex-end; font-size: 0.85rem; color: var(--primary);">em até ${instCount}x de ${formatMoney(valFinal / instCount)}</div>`;
+        }
+
+        document.getElementById('cart-summary').innerHTML = summaryHTML;
+    }
+
+    function openComboDetails(title) {
+        const calc = calculateCart();
+        const comboSummary = calc.combos.find(c => c.title === title);
+        if (!comboSummary) return;
+
+        const comboItems = calc.items.filter(i => comboSummary.areas.some(ca => ca.id === i.id));
+
+        let detailsHtml = `<ul style="list-style: none; padding: 0; margin-bottom: 15px;">`;
+        comboItems.forEach(item => {
+            detailsHtml += `<li style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #eee; font-size: 0.85rem;">
+                <span>${item.id}</span>
+                <span><strong>Por: ${formatMoney(item.finalPrice)}</strong> <small style="color:var(--text-muted); text-decoration:line-through;">${item.basePrice !== item.finalPrice ? 'De: ' + formatMoney(item.basePrice) : ''}</small></span>
+            </li>`;
+        });
+        detailsHtml += `</ul>`;
+
+        document.getElementById('details-modal-title').innerText = `Detalhamento: ${title}`;
+        document.getElementById('details-modal-body').innerHTML = `
+            ${detailsHtml}
+            <p><strong>Valor sem desconto:</strong> <span style="text-decoration: line-through;">${formatMoney(comboSummary.totalFull)}</span></p>
+            <p><strong>Valor com desconto:</strong> <span style="color: var(--primary); font-weight: 600;">${formatMoney(comboSummary.totalDiscounted)}</span></p>
+            <p style="margin-top: 10px; color: var(--discount-color);"><strong>Economia total:</strong> ${comboSummary.percentEcon}% OFF (${formatMoney(comboSummary.savings)})</p>
+        `;
+        document.getElementById('details-modal').style.display = 'flex';
+    }
+
+    function sendToWhatsApp(e) {
+        e.preventDefault();
+        const dropdown = document.getElementById('cart-payment-method');
+        if (!dropdown.value) {
+            alert('Por favor, selecione a forma de pagamento antes de enviar o pedido.');
+            dropdown.focus();
+            return;
+        }
+
+        const totalCount = selectedAreas.length + selectedCombos.length;
+        if (totalCount === 0) return;
+
+        const calc = calculateCart();
+        let text = "Olá Grazi! Montei meu pacote no site:\n\n*Itens Selecionados:*\n";
+        
+        if (calc.combos && calc.combos.length > 0) {
+            calc.combos.forEach(combo => {
+                text += `- Combo ${combo.title} - De: ${formatMoney(combo.totalFull)} Por: ${formatMoney(combo.totalDiscounted)}\n`;
+            });
+        }
+
+        if (selectedAreas.length > 0) {
+            let avulsasItems = calc.items.filter(item => selectedAreas.some(sa => sa.id === item.id));
+            avulsasItems.forEach(item => {
+                text += `- ${item.id} - De: ${formatMoney(item.basePrice)} Por: ${formatMoney(item.finalPrice)}\n`;
+            });
+        }
+
+        text += `\n*Forma de Pagamento:* ${pricing[currentMethod].label}`;
+        text += `\n*Valor Total:* ${formatMoney(calc.totalDiscounted)}`;
+        
+        if (pricing[currentMethod].inst > 1) {
+            text += ` (em até ${pricing[currentMethod].inst}x de ${formatMoney(calc.totalDiscounted / pricing[currentMethod].inst)})`;
+        }
+
+        const encodedText = encodeURIComponent(text);
+        window.open(`https://wa.me/5513991630136?text=${encodedText}`, '_blank');
+    }
+
+    function toggleChat() {
+        const chat = document.getElementById('chat-window');
+        chat.style.display = chat.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    function handleChatEnter(e) {
+        if (e.key === 'Enter') sendMessage();
+    }
+
+    async function sendMessage() {
+        const input = document.getElementById('chat-input');
+        const text = input.value.trim();
+        if (!text) return;
+
+        appendMessage(text, 'user');
+        input.value = '';
+        input.disabled = true;
+        document.getElementById('send-button').disabled = true;
+
+        const loadingId = appendLoading();
+
+        try {
+            const response = await fetch('chat.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: text })
+            });
+            
+            const data = await response.json();
+            removeMessage(loadingId);
+            
+            if (data.reply) {
+                appendMessage(data.reply, 'bot');
+            } else {
+                appendMessage("Desculpe, tive um probleminha. Me chame no WhatsApp!", 'bot');
+            }
+        } catch (error) {
+            removeMessage(loadingId);
+            appendMessage("Desculpe, erro de conexão. Me chame no WhatsApp!", 'bot');
+        }
+
+        input.disabled = false;
+        document.getElementById('send-button').disabled = false;
+        input.focus();
+    }
+
+    function appendMessage(text, sender) {
+        const container = document.getElementById('chat-messages');
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `message ${sender}-message`;
+        msgDiv.textContent = text;
+        container.appendChild(msgDiv);
+        container.scrollTop = container.scrollHeight;
+    }
+
+    function appendLoading() {
+        const id = 'loading-' + Date.now();
+        const container = document.getElementById('chat-messages');
+        const msgDiv = document.createElement('div');
+        msgDiv.className = 'message bot-message';
+        msgDiv.id = id;
+        msgDiv.innerHTML = '<div class="loading-dots"><span></span><span></span><span></span></div>';
+        container.appendChild(msgDiv);
+        container.scrollTop = container.scrollHeight;
+        return id;
+    }
+
+    function removeMessage(id) {
+        const element = document.getElementById(id);
+        if (element) element.remove();
+    }
+</script>
+
+</body>
+</html>

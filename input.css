@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* Fonte de conteúdo: o Tailwind vai escanear este arquivo em busca das classes usadas */
+@source "./index.html";
+
+/* Cores customizadas — as mesmas que estavam no tailwind.config inline do CDN */
+@theme {
+  --color-agua-claro: #B9E0E5;
+  --color-azul-principal: #004D40;
+  --color-verde-claro-comp: #B2D8D5;
+  --color-bege-neutro: #F8F8F5;
+  --color-cinza-texto: #555555;
+  --color-cta-forte: #1F9D55;
+  --color-azul-hover: #003A30;
+}

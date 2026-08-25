@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Proposta Personalizada | Grazielle Diniz - Estética e Depilação a Laser</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #004D40; 
+            --primary-light: #00695C;
+            --primary-very-light: rgba(0, 77, 64, 0.08);
+            --bg: #F8F8F5; 
+            --white: #FFFFFF;
+            --text-dark: #2C3E50;
+            --text-muted: #606F7B;
+            --border: #D1D5DB;
+            --discount-color: #2E7D32; 
+            --danger: #E53935;
+            --warning-bg: #FFFBEB; 
+            --warning-border: #F59E0B;
+            --warning-text: #B45309;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-dark);
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .top-header {
+            width: 100%;
+            background-color: var(--white);
+            text-align: center;
+            padding-top: 20px;
+            position: relative; 
+        }
+
+        .header-logo-top {
+            width: 80%;
+            max-width: 260px;
+            height: auto;
+            display: inline-block;
+            margin-bottom: -1px; 
+        }
+
+        .container {
+            max-width: 1100px; 
+            margin: 0 auto;
+            padding: 20px 15px 80px; 
+        }
+
+        header.content-header { text-align: center; margin-bottom: 25px; }
+        header.content-header h1 { font-size: 1.8rem; margin-bottom: 5px; }
+        header.content-header p { color: var(--text-muted); font-size: 0.95rem; }
+
+        .discount-persistent-notice {
+            background-color: var(--warning-bg);
+            border: 1px solid var(--warning-border);
+            border-radius: 6px;
+            padding: 12px 16px;
+            margin-bottom: 25px;
+            font-size: 0.85rem;
+            color: var(--warning-text);
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+        }
+
+        .comparison-wrapper {
+            overflow-x: auto;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            background: var(--white);
+            border: 1px solid rgba(0, 77, 64, 0.1);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            min-width: 1100px;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            width: 20%;
+        }
+
+        .comparison-table th {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+        }
+
+        .comparison-table th span {
+            display: block;
+            font-size: 0.75rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: normal;
+            opacity: 0.85;
+            margin-top: 3px;
+        }
+
+        .col-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .item-list-mini {
+            list-style: none;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .item-block {
+            padding: 8px 0;
+            border-bottom: 1px dotted #eee;
+        }
+
+        .item-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .item-name-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item-name-tag {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.8rem;
+        }
+
+        .item-single-price {
+            font-size: 0.72rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-top: 2px;
+            white-space: nowrap;
+        }
+
+        .combo-sublist {
+            list-style: none;
+            margin-top: 3px;
+            padding-left: 10px;
+            border-left: 2px solid var(--primary-very-light);
+        }
+
+        .combo-sublist li {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            padding: 1px 0;
+        }
+
+        .price-display {
+            text-align: center;
+            margin: 15px 0;
+            background: rgba(0, 77, 64, 0.03);
+            padding: 12px 8px;
+            border-radius: 6px;
+            border: 1px solid rgba(0, 77, 64, 0.06);
+        }
+
+        .price-card-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            display: block;
+            border-bottom: 1px solid rgba(0, 77, 64, 0.1);
+            padding-bottom: 4px;
+        }
+
+        .price-de-mini {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-decoration: line-through;
+            display: block;
+        }
+
+        .price-por-mini {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--primary);
+            white-space: nowrap;
+        }
+
+        .price-sub-mini {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            display: block;
+            margin-top: 2px;
+            white-space: nowrap;
+        }
+
+        /* Para textos longos (ex.: o aviso da forma de pagamento), que
+           precisam quebrar linha em vez de vazar para as colunas ao lado. */
+        .price-notice-mini {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            display: block;
+            margin-top: 4px;
+            white-space: normal;
+            overflow-wrap: break-word;
+            line-height: 1.4;
+        }
+
+        .btn-choose {
+            display: block;
+            width: 100%;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            transition: 0.2s;
+            margin-top: auto; 
+        }
+        .btn-choose:hover { background-color: var(--primary-light); }
+
+        .actions-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .btn-download-pdf {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn-download-pdf:hover { background-color: var(--primary-light); }
+        .btn-download-pdf:disabled { opacity: 0.6; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+
+<header class="top-header">
+    <img src="/images/logotipo-fundo-transparente.png" alt="Grazielle Diniz Estética" class="header-logo-top">
+</header>
+
+<div class="container">
+    <header class="content-header">
+        <h1>Proposta Personalizada</h1>
+        <p>Veja abaixo os valores personalizados para o seu pacote de depilação a laser.</p>
+    </header>
+
+    <div class="discount-persistent-notice">
+        Aviso Importante: Todos os pacotes são compostos por 10 sessões.
+    </div>
+
+    <div class="actions-row">
+        <button class="btn-download-pdf" id="btn-download-pdf" onclick="downloadPdf()">⬇ Baixar em PDF</button>
+    </div>
+
+    <div class="comparison-wrapper">
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>PIX à Vista <span>5% de desconto</span></th>
+                    <th>PIX Parcelado <span>Mensal com data fixa</span></th>
+                    <th>Cartão de Crédito <span>Até 10x sem juros</span></th>
+                    <th>Recorrente Cartão <span>Débito automático mensal</span></th>
+                    <th>Sessão Avulsa <span>Manutenção individual</span></th>
+                </tr>
+            </thead>
+            <tbody id="comparison-body">
+                <!-- Preenchido via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+    const pricing = {
+        cartao_total: { label: "Cartão de Crédito", notice: "Pagamento total no cartão de crédito em até 10x sem juros.", inst: 10, sessions: 10, data: { PP: 349, P: 499, M: 799, G: 899, GG: 1099 } },
+        pix_vista: { label: "PIX à Vista", notice: "Pagamento à vista com 5% de desconto especial.", inst: 1, sessions: 10, data: { PP: 331.55, P: 474.05, M: 759.05, G: 854.05, GG: 1044.05 } },
+        recorrente: { label: "Recorrente Cartão", notice: "Pagamento com débito automático mensal sem comprometer o limite do cartão de crédito.", inst: 10, sessions: 10, data: { PP: 399, P: 549, M: 899, G: 999, GG: 1199 } },
+        boleto: { label: "Pix Parcelado", notice: "Pagamento mensal via pix parcelado com data fixa. O não pagamento da mensalidade impede a realização da sessão.", inst: 10, sessions: 10, data: { PP: 449, P: 599, M: 949, G: 1099, GG: 1299 } },
+        avulso: { label: "Sessão Avulsa", notice: "Pagamento por sessão individual para manutenção.", inst: 1, sessions: 1, data: { PP: 50, P: 70, M: 100, G: 120, GG: 150 } }
+    };
+
+    const areaLists = {
+        PP: ["Buço", "Mento (queixo)", "Glabela", "Maçã do Rosto", "Testa", "Costeletas"],
+        P: ["Axilas", "Virilha Cavada", "Seios (decote)", "Aréolas", "Perianal", "Linha do Umbigo", "Mãos/Dedos", "Pés/Dedos", "Cóccix", "Nuca"],
+        M: ["Pescoço/Faixa da Barba", "Ombros", "Virilha Completa (s/ ânus)", "Glúteos"],
+        G: ["Meia Perna", "Braço", "Antebraço", "Abdômen"],
+        GG: ["Tórax (Masculino)", "Coxas", "Costas Superior", "Costas Inferior"]
+    };
+
+    const comboDefinitions = [
+        { id: "essencial_1", title: "Essencial 1", desc: "Inclui: Meia Perna, Virilha Completa, Perianal, Axilas e Buço.", areas: [{id: 'Meia Perna', size: 'G'}, {id: 'Virilha Completa (s/ ânus)', size: 'M'}, {id: 'Perianal', size: 'P'}, {id: 'Axilas', size: 'P'}, {id: 'Buço', size: 'PP'}] },
+        { id: "essencial_2", title: "Essencial 2", desc: "Inclui: Virilha Completa, Perianal, Axilas e Buço.", areas: [{id: 'Virilha Completa (s/ ânus)', size: 'M'}, {id: 'Perianal', size: 'P'}, {id: 'Axilas', size: 'P'}, {id: 'Buço', size: 'PP'}] },
+        { id: "essencial_3", title: "Essencial 3", desc: "Inclui: Virilha Completa com Perianal e Axilas.", areas: [{id: 'Virilha Completa (s/ ânus)', size: 'M'}, {id: 'Perianal', size: 'P'}, {id: 'Axilas', size: 'P'}] },
+        { id: "braco_completo", title: "Braço Completo", desc: "Inclui: Braço e Antebraço.", areas: [{id: 'Braço', size: 'G'}, {id: 'Antebraço', size: 'G'}] },
+        { id: "rosto_completo", title: "Rosto Completo", desc: "Buço, Mento (queixo), Costeletas e Maçã do Rosto.", areas: [{id: 'Buço', size: 'PP'}, {id: 'Mento (queixo)', size: 'PP'}, {id: 'Costeletas', size: 'PP'}, {id: 'Maçã do Rosto', size: 'PP'}] },
+        { id: "perna_completa", title: "Perna Completa", desc: "Inclui: Coxas e Meia Perna.", areas: [{id: 'Coxas', size: 'GG'}, {id: 'Meia Perna', size: 'G'}] },
+        { id: "barba_completa", title: "Barba Completa", desc: "Inclui: Pescoço/Faixa da Barba, Buço, Mento (queixo), Costeletas e Maçã do Rosto.", areas: [{id: 'Pescoço/Faixa da Barba', size: 'M'}, {id: 'Buço', size: 'PP'}, {id: 'Mento (queixo)', size: 'PP'}, {id: 'Costeletas', size: 'PP'}, {id: 'Maçã do Rosto', size: 'PP'}] },
+        { id: "tronco", title: "Tronco", desc: "Tórax e Abdômen.", areas: [{id: 'Tórax (Masculino)', size: 'GG'}, {id: 'Abdômen', size: 'G'}] },
+        { id: "costas_completas", title: "Costas Completas", desc: "Costas superior e inferior para maior conforto.", areas: [{id: 'Costas Superior', size: 'GG'}, {id: 'Costas Inferior', size: 'GG'}] }
+    ];
+
+    let selectedAreas = [];
+    let selectedCombos = [];
+
+    window.onload = function() {
+        loadBudgetData();
+        renderComparisonTable();
+
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('autopdf') === '1') {
+            // Dá um tempinho para o navegador terminar de desenhar a tabela
+            // antes de capturá-la para o PDF.
+            setTimeout(downloadPdf, 400);
+        }
+    };
+
+    function loadBudgetData() {
+        let loaded = false;
+
+        // 1) MÉTODO PRINCIPAL: lê os dados codificados na própria URL (?d=...).
+        // Funciona em qualquer dispositivo, porque os dados viajam junto com
+        // o link — é o que permite abrir o orçamento no celular da cliente.
+        try {
+            const params = new URLSearchParams(window.location.search);
+            const encoded = params.get('d');
+            if (encoded) {
+                const json = decodeURIComponent(escape(atob(encoded)));
+                const parsed = JSON.parse(json);
+                selectedAreas = parsed.selectedAreas || [];
+                selectedCombos = [];
+                if (parsed.selectedCombos) {
+                    parsed.selectedCombos.forEach(cId => {
+                        let comboObj = comboDefinitions.find(c => c.id === cId);
+                        if (comboObj) selectedCombos.push(comboObj);
+                    });
+                }
+                loaded = selectedAreas.length > 0 || selectedCombos.length > 0;
+            }
+        } catch(e) {
+            console.error("Erro ao decodificar orçamento da URL", e);
+        }
+
+        // 2) PLANO B: se não veio nada pela URL, tenta o localStorage.
+        // Só funciona se estiver no MESMO navegador/dispositivo que gerou o
+        // orçamento (por exemplo, você mesma testando no seu computador).
+        if (!loaded) {
+            const savedData = localStorage.getItem('grazi_orcamento_atual');
+            if (savedData) {
+                try {
+                    const parsed = JSON.parse(savedData);
+                    selectedAreas = parsed.selectedAreas || [];
+                    selectedCombos = [];
+                    if (parsed.selectedCombos) {
+                        parsed.selectedCombos.forEach(cId => {
+                            let comboObj = comboDefinitions.find(c => c.id === cId);
+                            if (comboObj) selectedCombos.push(comboObj);
+                        });
+                    }
+                    loaded = selectedAreas.length > 0 || selectedCombos.length > 0;
+                } catch(e) { console.error("Erro ao carregar do storage"); }
+            }
+        }
+
+        // 3) Fallback de demonstração, caso nenhuma das duas fontes tenha dados.
+        if (selectedAreas.length === 0 && selectedCombos.length === 0) {
+            selectedAreas.push({ id: 'Braço', size: 'G' }, { id: 'Antebraço', size: 'G' });
+        }
+    }
+
+    function formatMoney(value) { return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); }
+
+    function getDiscountMultiplier(index) {
+        if (index === 0) return 1.00;
+        if (index === 1) return 0.80;
+        if (index === 2) return 0.75;
+        if (index === 3) return 0.60;
+        if (index === 4 || index === 5) return 0.50;
+        return 0.40;
+    }
+
+    // Calculador ISOLADO: recebe um grupo de áreas/combos e aplica o desconto
+    // progressivo reiniciando do índice 0 DENTRO DESSE GRUPO. É usado tanto
+    // para calcular um único combo isoladamente, quanto como base interna
+    // da função abaixo (calculateCartForMethod).
+    // CORRIGIDO: removida a exceção indevida que zerava o desconto no método "avulso".
+    function calculateSimulatedCartForMethod(methodKey, simulatedAreas, simulatedCombos) {
+        const pricesObj = pricing[methodKey].data;
+        let allItems = [];
+
+        simulatedCombos.forEach(c => {
+            c.areas.forEach(a => {
+                let s = a.size;
+                if (!s) {
+                    for (let key in areaLists) { if (areaLists[key].includes(a.id)) s = key; }
+                }
+                allItems.push({ id: a.id, size: s });
+            });
+        });
+
+        simulatedAreas.forEach(sa => {
+            let s = sa.size;
+            if (!s) {
+                for (let key in areaLists) { if (areaLists[key].includes(sa.id)) s = key; }
+            }
+            allItems.push({ id: sa.id, size: s });
+        });
+
+        let items = [...allItems].map(a => {
+            let matchedSize = a.size;
+            if (!matchedSize) {
+                for (let s in areaLists) {
+                    if (areaLists[s].includes(a.id)) { matchedSize = s; break; }
+                }
+            }
+            return { id: a.id, size: matchedSize };
+        }).sort((a, b) => pricesObj[b.size] - pricesObj[a.size]);
+
+        let totalFull = 0;
+        let totalDiscounted = 0;
+        let detailed = [];
+
+        items.forEach((item, index) => {
+            let basePrice = pricesObj[item.size];
+            let multiplier = getDiscountMultiplier(index);
+            let finalPrice = basePrice * multiplier;
+            totalFull += basePrice;
+            totalDiscounted += finalPrice;
+            detailed.push({ ...item, basePrice, finalPrice, perSession: finalPrice / pricing[methodKey].sessions });
+        });
+
+        return { totalFull, totalDiscounted, detailed };
+    }
+
+    // REGRA CORRIGIDA: o desconto progressivo é sempre aplicado sobre a lista
+    // GLOBAL de itens (regiões avulsas + regiões de todos os combos juntas),
+    // ordenada da mais cara para a mais barata. Apenas o item mais caro de
+    // TODO o carrinho fica sem desconto (índice 0); todos os demais recebem
+    // desconto progressivo, não importa de qual combo vieram.
+    function calculateCartForMethod(methodKey, simulatedAreas, simulatedCombos) {
+        const pricesObj = pricing[methodKey].data;
+
+        let allAreasFlat = [...simulatedAreas];
+        simulatedCombos.forEach(combo => {
+            combo.areas.forEach(a => {
+                let matchedSize = a.size;
+                if (!matchedSize) {
+                    for (let s in areaLists) {
+                        if (areaLists[s].includes(a.id)) { matchedSize = s; break; }
+                    }
+                }
+                allAreasFlat.push({ id: a.id, size: matchedSize });
+            });
+        });
+
+        let items = [...allAreasFlat].sort((a, b) => pricesObj[b.size] - pricesObj[a.size]);
+        let totalFull = 0;
+        let totalDiscounted = 0;
+        let detailed = [];
+
+        items.forEach((item, index) => {
+            let basePrice = pricesObj[item.size];
+            let multiplier = getDiscountMultiplier(index);
+            let finalPrice = basePrice * multiplier;
+            totalFull += basePrice;
+            totalDiscounted += finalPrice;
+            detailed.push({ ...item, basePrice, finalPrice, perSession: finalPrice / pricing[methodKey].sessions });
+        });
+
+        // O subtotal de cada combo é a soma dos itens dele DENTRO da lista
+        // global já descontada acima — garante que a soma dos combos bate
+        // exatamente com o total final.
+        let comboSummaries = simulatedCombos.map(combo => {
+            let cItems = detailed.filter(i => combo.areas.some(ca => ca.id === i.id));
+            let cFull = cItems.reduce((acc, cur) => acc + cur.basePrice, 0);
+            let cDisc = cItems.reduce((acc, cur) => acc + cur.finalPrice, 0);
+            return {
+                title: combo.title,
+                desc: combo.desc,
+                areas: combo.areas,
+                totalFull: cFull,
+                totalDiscounted: cDisc,
+                detailed: cItems
+            };
+        });
+
+        return { totalFull, totalDiscounted, detailed, combos: comboSummaries };
+    }
+
+    function renderComparisonTable() {
+        const tbody = document.getElementById('comparison-body');
+        const methodsOrder = ['pix_vista', 'boleto', 'cartao_total', 'recorrente', 'avulso'];
+
+        let html = '<tr>';
+        methodsOrder.forEach(mKey => {
+            let calc = calculateCartForMethod(mKey, selectedAreas, selectedCombos);
+            let pData = pricing[mKey];
+
+            html += `<td>
+                <div class="col-content">
+                    <div class="item-list-mini">`;
+            
+            calc.combos.forEach(c => {
+                let comboPerSession = c.totalDiscounted / pData.sessions;
+
+                html += `<div class="item-block">
+                    <div class="item-header-row">
+                        <div class="item-name-col">
+                            <span class="item-name-tag">${c.title}</span>
+                            <span class="item-single-price">${formatMoney(comboPerSession)} por sessão</span>
+                        </div>
+                    </div>
+                    <ul class="combo-sublist">`;
+                c.areas.forEach(ar => { html += `<li>• ${ar.id}</li>`; });
+                html += `   </ul>
+                </div>`;
+            });
+
+            selectedAreas.forEach(a => {
+                let itemCalc = calc.detailed.find(i => i.id === a.id);
+                let itemPerSession = itemCalc ? itemCalc.perSession : 0;
+
+                html += `<div class="item-block">
+                    <div class="item-header-row">
+                        <div class="item-name-col">
+                            <span class="item-name-tag">${a.id}</span>
+                            <span class="item-single-price">${formatMoney(itemPerSession)} por sessão</span>
+                        </div>
+                    </div>
+                </div>`;
+            });
+
+            html += `   </div>
+                        <div>
+                            <div class="price-display">
+                                <span class="price-card-label">${pData.label}</span>`;
+            if (calc.totalFull !== calc.totalDiscounted && mKey !== 'avulso') {
+                html += `<span class="price-de-mini">De: ${formatMoney(calc.totalFull)}</span>`;
+            }
+            html += `           <span class="price-por-mini">${formatMoney(calc.totalDiscounted)}</span>`;
+            
+            let totalPerSession = calc.totalDiscounted / pData.sessions;
+            html += `<span class="price-sub-mini"><strong>${formatMoney(totalPerSession)}</strong> por sessão</span>`;
+
+            if (pData.inst > 1) {
+                html += `<span class="price-sub-mini" style="margin-top:4px;">Em até ${pData.inst}x de ${formatMoney(calc.totalDiscounted / pData.inst)}</span>`;
+            } else {
+                html += `<span class="price-notice-mini">${pData.notice || 'Valor total'}</span>`;
+            }
+
+            html += `        </div>
+                            <button class="btn-choose" onclick="selectOption('${pData.label}', ${calc.totalDiscounted}, ${pData.inst}, '${mKey}')">Escolher esta opção</button>
+                        </div>
+                </div>
+            </td>`;
+        });
+        html += '</tr>';
+        tbody.innerHTML = html;
+    }
+
+    function selectOption(methodLabel, totalVal, instCount, mKey) {
+        let calc = calculateCartForMethod(mKey, selectedAreas, selectedCombos);
+        let text = "Olá Grazi! Escolhi meu orçamento pelo site:\n\n*Itens do Pacote e Valores:* \n";
+        
+        calc.combos.forEach(c => {
+            let comboSess = c.totalDiscounted / pricing[mKey].sessions;
+            text += `- ${c.title}: ${formatMoney(c.totalDiscounted)} (${formatMoney(comboSess)} por sessão)\n`;
+            c.areas.forEach(ar => { text += `  • ${ar.id}\n`; });
+        });
+
+        selectedAreas.forEach(a => {
+            let itemCalc = calc.detailed.find(i => i.id === a.id);
+            if (itemCalc) {
+                text += `- ${a.id}: ${formatMoney(itemCalc.finalPrice)} (${formatMoney(itemCalc.perSession)} por sessão)\n`;
+            }
+        });
+
+        let generalPerSession = totalVal / pricing[mKey].sessions;
+        text += `\n*Forma de Pagamento Escolhida:* ${methodLabel}`;
+        text += `\n*Valor Total:* ${formatMoney(totalVal)} (${formatMoney(generalPerSession)} por sessão)`;
+        
+        if (instCount > 1) {
+            text += `\n*Parcelamento:* Em até ${instCount}x de ${formatMoney(totalVal / instCount)}`;
+        }
+
+        window.open(`https://wa.me/5513991630136?text=${encodeURIComponent(text)}`, '_blank');
+    }
+
+    async function downloadPdf() {
+        const btn = document.getElementById('btn-download-pdf');
+        const originalLabel = btn.textContent;
+        btn.textContent = 'Gerando PDF...';
+        btn.disabled = true;
+
+        try {
+            const wrapper = document.querySelector('.comparison-wrapper');
+            const table = document.querySelector('.comparison-table');
+
+            // Captura a largura TOTAL da tabela (inclusive a parte que fica
+            // escondida atrás da rolagem lateral), não só o que está visível
+            // na tela — é o que garante que as 5 colunas saiam no PDF.
+            const canvas = await html2canvas(wrapper, {
+                scale: 2,
+                backgroundColor: '#ffffff',
+                width: table.scrollWidth,
+                height: table.scrollHeight,
+                windowWidth: table.scrollWidth
+            });
+
+            const imgData = canvas.toDataURL('image/png');
+            const { jsPDF } = window.jspdf;
+
+            const pxToMm = px => (px / 2) * 25.4 / 96; // /2 porque scale:2 acima
+            const imgWidthMm = pxToMm(canvas.width);
+            const imgHeightMm = pxToMm(canvas.height);
+
+            const pdf = new jsPDF({
+                orientation: imgWidthMm >= imgHeightMm ? 'landscape' : 'portrait',
+                unit: 'mm',
+                format: [imgWidthMm, imgHeightMm]
+            });
+
+            pdf.addImage(imgData, 'PNG', 0, 0, imgWidthMm, imgHeightMm);
+            pdf.save('proposta-grazielle-diniz-depilacao-a-laser.pdf');
+        } catch (err) {
+            console.error('Erro ao gerar PDF:', err);
+            alert('Não foi possível gerar o PDF agora. Tente novamente em alguns instantes.');
+        }
+
+        btn.textContent = originalLabel;
+        btn.disabled = false;
+    }
+</script>
+
+</body>
+</html>
