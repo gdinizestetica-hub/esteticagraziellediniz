@@ -15,3 +15,6 @@ RewriteRule ^images/video-poster-resultados-guaruja\.webp$ /images/foto-da-profi
 # Nomes antigos/duplicados da foto da profissional -> arquivo canônico
 RewriteRule ^images/grazielle-diniz-esteticista-guaruja\.png$ /images/foto-da-profissional-esteticista-grazielle-diniz-guaruja.png [R=301,L,NE]
 RewriteRule ^images/grazielle-diniz-esteticista-jacarei\.png$ /images/foto-da-profissional-esteticista-grazielle-diniz-guaruja.png [R=301,L,NE]
+
+# Fotos de resultados que não existem mais no repositório -> placeholder neutro
+RewriteRule ^images/resultado-laser-(1|2|3)\.webp$ /images/resultado-laser-placeholder.svg [R=302,L,NE]
