@@ -12,9 +12,9 @@ export const site = {
 };
 
 export const treatments = [
-  { slug: '/depilacao-laser-guaruja/', number: '01', name: 'Depilação a laser', short: 'Tratamento para redução duradoura dos pelos, com avaliação e parâmetros ajustados a cada sessão.', cta: 'Conhecer a depilação' },
-  { slug: '/drenagem-linfatica-guaruja/', number: '02', name: 'Drenagem Linfática', short: 'Drenagem Linfática Premium ou Tradicional, com atendimento corporal direcionado.', cta: 'Conhecer a drenagem' },
-  { slug: '/limpeza-de-pele-guaruja/', number: '03', name: 'Limpeza de pele', short: 'Protocolo facial definido a partir das necessidades e do momento da sua pele.', cta: 'Conhecer a limpeza' }
+  { slug: '/depilacao-laser-guaruja/', number: '01', name: 'Depilação a laser', short: 'Tratamento para redução duradoura dos pelos, com avaliação e parâmetros ajustados a cada sessão.', cover: '/images/capa-depilacao-laser.jpg', cta: 'Conhecer a depilação' },
+  { slug: '/drenagem-linfatica-guaruja/', number: '02', name: 'Drenagem Linfática', short: 'Drenagem Linfática Premium ou Tradicional, com atendimento corporal direcionado.', cover: '/images/capa-drenagem-linfatica.jpg', cta: 'Conhecer a drenagem' },
+  { slug: '/limpeza-de-pele-guaruja/', number: '03', name: 'Limpeza de pele', short: 'Protocolo facial definido a partir das necessidades e do momento da sua pele.', cover: '/images/capa-limpeza-de-pele.jpg', cta: 'Conhecer a limpeza' }
 ];
 
 export const whatsapp = (message: string) => `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`;
