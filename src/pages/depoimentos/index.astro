@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+const reviews = [
+  ['Priscila Bamondes','Drenagem e outros','Acompanho o trabalho da Grazielle há anos. Ela cria conexão, passa segurança e entrega resultado.'],
+  ['Jessica Pacheco','Drenagem linfática','Ambiente muito limpo, localização fácil e saí relaxada com a drenagem.'],
+  ['Paola Mariano','Depilação a laser','Na primeira sessão já percebi um resultado que superou minhas expectativas.']
+];
+---
+<SiteLayout title="Depoimentos de Clientes | Grazielle Diniz Estética no Guarujá" description="Veja relatos de clientes sobre depilação a laser, drenagem premium e tratamentos estéticos da Grazielle Diniz na Enseada, Guarujá.">
+<section class="page-hero"><div class="wrap"><p class="eyebrow">Experiências reais</p><h1>Depoimentos de clientes</h1><p>Relatos sobre atendimento, ambiente e tratamentos realizados na Enseada.</p></div></section>
+<section class="section"><div class="wrap"><div class="cards">{reviews.map(([name,service,text])=><article class="card"><p class="quote">“{text}”</p><h3>{name}</h3><p>{service}</p></article>)}</div></div></section>
+<section class="section sand"><div class="wrap" style="text-align:center"><h2>Quer conhecer o atendimento?</h2><p style="margin-inline:auto">Fale pelo WhatsApp para tirar dúvidas e entender qual tratamento conversa com o seu objetivo.</p><a class="btn coral" href="https://wa.me/5513991630136" target="_blank" rel="noopener">Conversar pelo WhatsApp</a></div></section>
+</SiteLayout>

@@ -1,0 +1,11 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import TreatmentHero from '../../components/TreatmentHero.astro';
+import { whatsapp } from '../../data/site';
+---
+<SiteLayout title="Limpeza de Pele no Guarujá | Grazielle Diniz Estética" description="Limpeza de pele no Guarujá com avaliação e protocolo facial orientado para as necessidades da sua pele, na Enseada.">
+<TreatmentHero eyebrow="Tratamento facial na Enseada" title="Limpeza de pele no Guarujá" description="Um protocolo facial explicado passo a passo, com avaliação das necessidades da sua pele e cuidados orientados para a sua rotina." cta="Tirar dúvidas pelo WhatsApp" />
+<section class="section"><div class="wrap"><div class="section-head"><p class="eyebrow">Como funciona</p><h2>O cuidado começa antes da extração.</h2><p>Conversamos sobre sua pele, observamos sensibilidades e definimos o que faz sentido para o atendimento daquele dia.</p></div><div class="cards"><article class="card"><span class="number">01</span><h3>Avaliação</h3><p>Entendimento da rotina, queixas e características da pele.</p></article><article class="card"><span class="number">02</span><h3>Protocolo</h3><p>Higienização, renovação e extrações quando indicadas.</p></article><article class="card"><span class="number">03</span><h3>Orientação</h3><p>Cuidados simples para manter a pele confortável após a sessão.</p></article></div></div></section>
+<section class="section sand"><div class="wrap split"><div><p class="eyebrow">Dúvidas comuns</p><h2>Para quem a limpeza pode fazer sentido?</h2></div><ul class="checklist"><li>Para quem percebe poros obstruídos e textura irregular</li><li>Para quem quer preparar a pele para outros cuidados</li><li>Para quem busca uma avaliação antes de escolher um protocolo</li><li>Para quem precisa revisar a rotina de cuidados faciais</li></ul></div></section>
+<section class="section"><div class="wrap" style="text-align:center"><h2>Quer conversar sobre a sua pele?</h2><p style="margin-inline:auto">Envie uma mensagem e conte o que você gostaria de melhorar. A avaliação ajuda a orientar o próximo passo.</p><a class="btn coral" href={whatsapp('Olá! Gostaria de conversar sobre limpeza de pele.')} target="_blank" rel="noopener">Conversar pelo WhatsApp</a></div></section>
+</SiteLayout>

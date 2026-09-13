@@ -1,0 +1,11 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import TreatmentCard from '../components/TreatmentCard.astro';
+import { site, treatments, whatsapp } from '../data/site';
+---
+<SiteLayout title="Depilação a Laser no Guarujá | Drenagem Linfática | Grazielle Diniz" description="Depilação a laser, drenagem premium e limpeza de pele na Enseada, Guarujá. Conheça o atendimento da Grazielle Diniz e agende sua avaliação.">
+<section class="hero"><div class="wrap hero-grid"><div><p class="eyebrow">Estética na Enseada · Guarujá</p><h1>Depilação a laser e estética no Guarujá.</h1><p class="hero-copy">Atendimento para quem procura orientação clara, ambiente tranquilo e tratamentos faciais e corporais na Enseada.</p><a class="btn coral" href={whatsapp('Olá! Vim pelo site e gostaria de agendar uma avaliação.')} target="_blank" rel="noopener">Agendar avaliação</a></div><div class="hero-media"><img src={site.image} alt="Grazielle Diniz, esteticista especialista em depilação a laser e estética no Guarujá" width="800" height="1000" /></div></div></section>
+<section class="section"><div class="wrap"><div class="section-head"><p class="eyebrow">Tratamentos</p><h2>Informação para escolher com tranquilidade.</h2><p>Conheça as opções de atendimento e entenda qual conversa melhor com o que você procura agora.</p></div><div class="cards">{treatments.map((treatment)=><TreatmentCard treatment={treatment}/>)}</div></div></section>
+<section class="section sand"><div class="wrap split"><div><p class="eyebrow">Como é o atendimento</p><h2>Conversa, avaliação e um plano possível para a sua rotina.</h2><p>Grazielle atua há mais de 8 anos na estética. O atendimento começa entendendo sua queixa e seus objetivos, sem promessas genéricas ou protocolos automáticos.</p></div><ul class="checklist"><li>Mais de 8 anos de experiência</li><li>Avaliação sem custo</li><li>Protocolos explicados com clareza</li><li>Ambiente climatizado e de fácil acesso</li></ul></div></section>
+<section class="section"><div class="wrap split"><div><p class="eyebrow">Na Enseada</p><h2>Um endereço fácil de encontrar no Guarujá.</h2><p>{site.address}. {site.reference}</p><a class="btn" href="/contato/">Ver localização</a></div><div class="quote">“O objetivo é que você entenda o cuidado que está fazendo e se sinta segura para decidir.”</div></div></section>
+</SiteLayout>

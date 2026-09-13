@@ -1,0 +1,4 @@
+---
+const { treatment } = Astro.props;
+---
+<article class="card"><span class="number">{treatment.number}</span><h3>{treatment.name}</h3><p>{treatment.short}</p><a class="card-link" href={treatment.slug}>{treatment.cta} →</a></article>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://esteticagraziellediniz.com.br/sitemap.xml

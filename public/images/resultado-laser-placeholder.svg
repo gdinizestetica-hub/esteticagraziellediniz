@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Resultados da depilação a laser</title>
+  <desc id="desc">Imagem ilustrativa enquanto as fotos reais de resultados são substituídas.</desc>
+  <rect width="900" height="1200" fill="#F8F8F5"/>
+  <rect x="70" y="70" width="760" height="1060" rx="28" fill="#FFFFFF" stroke="#DDEDEA" stroke-width="3"/>
+  <text x="450" y="520" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#004D40">Depilação a Laser</text>
+  <text x="450" y="585" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" fill="#555555">Resultados reais</text>
+  <text x="450" y="635" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#777777">Foto em atualização</text>
+  <circle cx="450" cy="760" r="72" fill="#EAF7F6"/>
+  <path d="M415 760h70M450 725v70" stroke="#004D40" stroke-width="10" stroke-linecap="round"/>
+</svg>

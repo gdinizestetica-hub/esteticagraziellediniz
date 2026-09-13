@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+const posts = [
+  ['Depilação a laser dói? O que influencia o desconforto','A sensação varia de pessoa para pessoa. Entenda o que pode influenciar a sessão e quais cuidados ajudam.'],
+  ['Quantas sessões de depilação a laser são necessárias?','O ciclo de crescimento dos pelos, a área e a resposta individual entram nessa conversa.'],
+  ['Praia e depilação a laser: quais cuidados tomar','No Guarujá, sol e rotina de praia pedem atenção especial antes e depois das sessões.'],
+  ['Laser ou cera: como comparar os métodos','Veja diferenças de rotina, frequência e cuidados para escolher com mais informação.']
+];
+---
+<SiteLayout title="Blog da Grazielle Diniz | Cuidados com a Pele e Estética no Guarujá" description="Informações claras sobre depilação a laser, drenagem premium e cuidados com a pele na Enseada, Guarujá.">
+<section class="page-hero"><div class="wrap"><p class="eyebrow">Informação para decidir melhor</p><h1>Blog da Grazielle Diniz</h1><p>Explicações diretas sobre tratamentos estéticos e cuidados que fazem parte da rotina.</p></div></section>
+<section class="section"><div class="wrap article-grid">{posts.map(([title,summary])=><article class="article"><p class="eyebrow">Estética · Guarujá</p><h2>{title}</h2><p>{summary}</p><a class="card-link" href="/contato/">Conversar sobre o assunto →</a></article>)}</div></section>
+</SiteLayout>

@@ -1,0 +1,31 @@
+---
+import '../styles/global.css';
+import { site, whatsapp } from '../data/site';
+const { title, description, canonical = site.domain + Astro.url.pathname, image = site.image } = Astro.props;
+---
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href={canonical} />
+  <meta property="og:type" content="website" /><meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content={site.name} /><meta property="og:title" content={title} />
+  <meta property="og:description" content={description} /><meta property="og:url" content={canonical} />
+  <meta property="og:image" content={image.startsWith('http') ? image : site.domain + image} />
+  <link rel="icon" href="/images/logotipo-fundo-transparente.png" />
+</head>
+<body>
+  <header class="site-header"><nav class="wrap nav"><a class="brand" href="/">Grazielle Diniz<small>ESTÉTICA</small></a><div class="nav-links"><a href="/">Início</a><a href="/depilacao-laser-guaruja/">Depilação a laser</a><a href="/drenagem-linfatica-guaruja/">Drenagem</a><a href="/limpeza-de-pele-guaruja/">Limpeza de pele</a><a href="/blog/">Blog</a><a href="/contato/">Contato</a></div><button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button></nav></header>
+  <main><slot /></main>
+  <a class="floating-wa" href={whatsapp('Olá! Vim pelo site e gostaria de tirar algumas dúvidas.')} target="_blank" rel="noopener">WhatsApp</a>
+  <footer class="footer"><div class="wrap footer-grid"><div><a class="brand" href="/">Grazielle Diniz<small>ESTÉTICA</small></a><p>Estética e depilação a laser na Enseada, Guarujá.</p></div><div><strong>Atendimento</strong><p>{site.hours}</p><p>{site.address}</p></div><div><strong>Vamos conversar?</strong><p><a href={whatsapp('Olá! Gostaria de agendar uma avaliação.')} target="_blank" rel="noopener">Agendar pelo WhatsApp</a></p><p><a href="/contato/">Ver contato e localização</a></p></div></div></footer>
+  <script is:inline>document.querySelector('.menu-toggle')?.addEventListener('click',()=>{const n=document.querySelector('.nav-links');const b=document.querySelector('.menu-toggle');n?.classList.toggle('is-open');b?.setAttribute('aria-expanded',String(n?.classList.contains('is-open')))});</script>
+</body>
+</html>
+<style>
+@media(max-width:800px){.nav-links.is-open{display:flex;position:absolute;top:68px;left:1rem;right:1rem;flex-direction:column;align-items:stretch;gap:0;padding:.6rem;background:#fff;border:1px solid var(--gd-line);border-radius:14px;box-shadow:var(--gd-shadow)}.nav-links.is-open a{padding:.7rem}}
+</style>

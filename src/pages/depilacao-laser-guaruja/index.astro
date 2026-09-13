@@ -1,0 +1,11 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import TreatmentHero from '../../components/TreatmentHero.astro';
+import { whatsapp } from '../../data/site';
+---
+<SiteLayout title="Depilação a Laser na Enseada, Guarujá | Grazielle Diniz" description="Depilação a laser na Enseada, Guarujá, com avaliação, planejamento de sessões e orientação para diferentes fototipos.">
+<TreatmentHero eyebrow="Depilação a laser · Guarujá" title="Depilação a laser com avaliação antes de começar." description="A indicação, os intervalos e a expectativa de cada caso são conversados na avaliação. O atendimento utiliza o equipamento Ácrus HTM Triple Wave, conforme o protocolo definido para você." cta="Conhecer o tratamento" />
+<section class="section"><div class="wrap"><div class="section-head"><p class="eyebrow">A sessão</p><h2>Você sabe o que acontece em cada etapa.</h2></div><div class="cards"><article class="card"><span class="number">01</span><h3>Avaliação</h3><p>Conversamos sobre pele, pelos, áreas de interesse e histórico de cuidados.</p></article><article class="card"><span class="number">02</span><h3>Preparação</h3><p>Você recebe orientações sobre o que fazer antes da sessão.</p></article><article class="card"><span class="number">03</span><h3>Aplicação</h3><p>A sessão é realizada de acordo com o protocolo e os parâmetros definidos.</p></article></div></div></section>
+<section class="section sand"><div class="wrap split"><div><p class="eyebrow">Áreas comuns</p><h2>Atendimento para diferentes regiões do corpo.</h2></div><ul class="checklist"><li>Axilas e virilha</li><li>Rosto e buço</li><li>Pernas e braços</li><li>Costas, peito e abdômen</li></ul></div></section>
+<section class="section"><div class="wrap" style="text-align:center"><h2>Quer entender se é indicado para você?</h2><p style="margin-inline:auto">A avaliação sem custo é o melhor ponto de partida para falar sobre pele, áreas e expectativas.</p><a class="btn coral" href={whatsapp('Olá! Gostaria de agendar uma avaliação para depilação a laser.')} target="_blank" rel="noopener">Agendar avaliação</a></div></section>
+</SiteLayout>
