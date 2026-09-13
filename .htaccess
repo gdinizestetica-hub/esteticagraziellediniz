@@ -18,3 +18,6 @@ RewriteRule ^images/grazielle-diniz-esteticista-jacarei\.png$ /images/foto-da-pr
 
 # Fotos de resultados que não existem mais no repositório -> placeholder neutro
 RewriteRule ^images/resultado-laser-(1|2|3)\.webp$ /images/resultado-laser-placeholder.svg [R=302,L,NE]
+
+# Página antiga de limpeza de pele: mantém a URL, mas envia para a página atual da home.
+RewriteRule ^limpeza-de-pele-guaruja/?$ / [R=301,L,NE]
