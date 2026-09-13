@@ -2,4 +2,4 @@
 const { treatment } = Astro.props;
 import { site } from '../data/site';
 ---
-<article class="card treatment-card"><div class="treatment-image"><img src={site.image} alt={`${treatment.name} com Grazielle Diniz na Enseada, Guarujá`} width="800" height="450" loading="lazy" /></div><div class="treatment-card-body"><span class="number">{treatment.number}</span><h3>{treatment.name}</h3><p>{treatment.short}</p><a class="card-link" href={treatment.slug}>{treatment.cta} →</a></div></article>
+<article class="card treatment-card"><div class="treatment-image"><img src={treatment.cover ?? site.image} alt={`${treatment.name} com Grazielle Diniz na Enseada, Guarujá`} width="800" height="450" loading="lazy" /></div><div class="treatment-card-body"><span class="number">{treatment.number}</span><h3>{treatment.name}</h3><p>{treatment.short}</p><a class="card-link" href={treatment.slug}>{treatment.cta} →</a></div></article>

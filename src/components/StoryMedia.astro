@@ -4,7 +4,7 @@ const { items = [], label = 'Mídias do atendimento' } = Astro.props;
 {items.length > 0 && <section class="story-media" aria-label={label} data-story-media>
   <div class="story-frame">
     {items.map((item, index) => <div class:list={['story-item', { active: index === 0 }]} data-story-item={index}>
-      {item.type === 'video' ? <video src={item.src} poster={item.poster} muted playsinline preload={index === 0 ? 'metadata' : 'none'} data-story-video={index} aria-label={item.alt}></video> : <img src={item.src} alt={item.alt} loading={index === 0 ? 'eager' : 'lazy'} />}
+      {item.type === 'video' ? <video src={item.src} poster={item.poster} muted playsinline preload={index === 0 ? 'metadata' : 'none'} data-story-video={index} aria-label={item.alt}></video> : item.type === 'placeholder' ? <div class="story-placeholder"><span>▶</span><strong>{item.title}</strong><small>{item.alt}</small></div> : <img src={item.src} alt={item.alt} loading={index === 0 ? 'eager' : 'lazy'} />}
       {item.duration && <span class="story-duration">{item.duration}</span>}
     </div>)}
     <button class="story-control story-prev" type="button" data-story-prev aria-label="Mídia anterior">←</button>
