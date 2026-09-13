@@ -3,7 +3,13 @@ import SiteLayout from '../../layouts/SiteLayout.astro';
 import TreatmentHero from '../../components/TreatmentHero.astro';
 import StoryMedia from '../../components/StoryMedia.astro';
 import { whatsapp } from '../../data/site';
-const media = [{ type: 'placeholder', title: 'Vídeos da limpeza em breve', alt: 'Aguardando o envio das mídias reais da limpeza de pele' }];
+const media = [
+  { type: 'image', src: '/images/limpeza-de-pele-1.jpg', alt: 'Limpeza de pele na clínica Grazielle Diniz', duration: 'Limpeza' },
+  { type: 'image', src: '/images/limpeza-de-pele-2.JPG', alt: 'Detalhe do atendimento de limpeza de pele', duration: 'Limpeza' },
+  { type: 'image', src: '/images/limpeza-de-pele-3.jpg', alt: 'Procedimento facial de limpeza de pele', duration: 'Limpeza' },
+  { type: 'video', src: '/images/limpeza-de-pele-4.mp4', poster: '/images/limpeza-de-pele-1.jpg', alt: 'Vídeo do atendimento de limpeza de pele', duration: 'Vídeo' },
+  { type: 'video', src: '/images/limpeza-de-pele-5.mp4', poster: '/images/limpeza-de-pele-1.jpg', alt: 'Vídeo do procedimento de limpeza de pele', duration: 'Vídeo' }
+];
 ---
 <SiteLayout title="Limpeza de Pele no Guarujá | Grazielle Diniz Estética" description="Limpeza de pele no Guarujá com avaliação e protocolo facial orientado para as necessidades da sua pele, na Enseada.">
 <TreatmentHero eyebrow="Tratamento facial na Enseada" title="Limpeza de pele no Guarujá" description="Um protocolo facial explicado passo a passo, com avaliação das necessidades da sua pele e cuidados orientados para a sua rotina." cta="Tirar dúvidas pelo WhatsApp" />

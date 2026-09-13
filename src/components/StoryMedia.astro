@@ -4,7 +4,7 @@ const { items = [], label = 'Mídias do atendimento' } = Astro.props;
 {items.length > 0 && <section class="story-media" aria-label={label} data-story-media>
   <div class="story-frame">
     {items.map((item, index) => <div class:list={['story-item', { active: index === 0 }]} data-story-item={index}>
-      {item.type === 'video' ? <video src={item.src} poster={item.poster} muted playsinline preload={index === 0 ? 'metadata' : 'none'} data-story-video={index} aria-label={item.alt}></video> : item.type === 'placeholder' ? <div class="story-placeholder"><span>▶</span><strong>{item.title}</strong><small>{item.alt}</small></div> : <img src={item.src} alt={item.alt} loading={index === 0 ? 'eager' : 'lazy'} />}
+      {item.type === 'video' ? <video src={item.src} poster={item.poster} muted playsinline loop={item.loop} preload={index === 0 ? 'metadata' : 'none'} data-story-video={index} aria-label={item.alt}></video> : item.type === 'placeholder' ? <div class="story-placeholder"><span>▶</span><strong>{item.title}</strong><small>{item.alt}</small></div> : <img src={item.src} alt={item.alt} loading={index === 0 ? 'eager' : 'lazy'} />}
       {item.duration && <span class="story-duration">{item.duration}</span>}
     </div>)}
     <button class="story-control story-prev" type="button" data-story-prev aria-label="Mídia anterior">←</button>
@@ -15,7 +15,7 @@ const { items = [], label = 'Mídias do atendimento' } = Astro.props;
 <script>
   document.querySelectorAll('[data-story-media]').forEach((root) => {
     const items = [...root.querySelectorAll('[data-story-item]')]; const dots = [...root.querySelectorAll('[data-story-dot]')]; let current = 0; let timer;
-    const show = (next, automatic = false) => { current = (next + items.length) % items.length; items.forEach((item, i) => item.classList.toggle('active', i === current)); dots.forEach((dot, i) => { dot.classList.toggle('active', i === current); dot.setAttribute('aria-selected', String(i === current)); }); const video = items[current].querySelector('video'); clearTimeout(timer); if (video) { video.currentTime = 0; video.play().catch(() => {}); video.onended = () => show(current + 1, true); } else { timer = window.setTimeout(() => show(current + 1, true), 4500); } };
+    const show = (next, automatic = false) => { current = (next + items.length) % items.length; items.forEach((item, i) => item.classList.toggle('active', i === current)); dots.forEach((dot, i) => { dot.classList.toggle('active', i === current); dot.setAttribute('aria-selected', String(i === current)); }); const video = items[current].querySelector('video'); clearTimeout(timer); if (video) { video.currentTime = 0; video.play().catch(() => {}); video.onended = video.loop ? null : () => show(current + 1, true); } else { timer = window.setTimeout(() => show(current + 1, true), 4500); } };
     root.querySelector('[data-story-prev]')?.addEventListener('click', () => show(current - 1)); root.querySelector('[data-story-next]')?.addEventListener('click', () => show(current + 1)); dots.forEach((dot, i) => dot.addEventListener('click', () => show(i))); show(0);
   });
 </script>
