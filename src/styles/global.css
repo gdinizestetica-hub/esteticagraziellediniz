@@ -100,3 +100,7 @@ h1{font-size:clamp(2.15rem,3.8vw,3.65rem)}.home-hero h1{font-size:clamp(2.35rem,
 @media(max-width:800px){.blog-topic-grid{grid-template-columns:1fr}.blog-topic{padding:1.4rem 0}.blog-post-header{padding:6.8rem 0 3rem}.blog-post-header h1{font-size:clamp(2rem,9vw,3rem)}.blog-post-layout{grid-template-columns:1fr;gap:2rem;padding-top:2.5rem}.blog-aside{position:static;border-left:0;border-top:1px solid var(--line);padding:1.5rem 0 0}.blog-post-cta{display:grid}.location-map{height:340px}}
 
 .treatment-map-section{padding-top:0}
+
+/* H1s internos discretos, sem alterar a escala da home */
+.hero-no-image h1{font-size:clamp(2rem,3.8vw,3.25rem);max-width:780px}
+@media(max-width:800px){.hero-no-image h1{font-size:clamp(1.85rem,8vw,2.65rem)}}
