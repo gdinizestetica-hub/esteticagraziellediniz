@@ -1,0 +1,123 @@
+---
+import SiteLayout from '../../../src/layouts/SiteLayout.astro';
+import { site, whatsapp } from '../../../src/data/site';
+
+const canonical = `${site.domain}/grazielle-diniz-esteticista-cosmetologa-guaruja/`;
+const title = 'Grazielle Diniz | Esteticista e Cosmetóloga no Guarujá';
+const description = 'Conheça a trajetória de Grazielle Diniz, esteticista e cosmetóloga na Enseada, Guarujá, sua formação, experiência e forma de cuidar de cada cliente.';
+
+const chapters = [
+  {
+    number: '01',
+    title: 'Antes da estética, aprendi a cuidar da experiência de quem está do outro lado',
+    media: 'Período no Sofitel Guarujá Jequitimar',
+    paragraphs: [
+      'Antes de trabalhar com estética, trabalhei na recepção do Sofitel Guarujá Jequitimar, um resort de alto padrão onde o atendimento fazia parte de uma cultura muito presente no dia a dia.',
+      'Os treinamentos eram constantes. Aprendi sobre postura profissional, ética, cordialidade e, principalmente, sobre perceber as necessidades de cada pessoa para oferecer uma experiência realmente bem cuidada.',
+      'Hoje, olhando para minha trajetória, percebo o quanto essa experiência continua presente no meu trabalho.',
+      'Quando falo em atendimento personalizado, não penso apenas em oferecer um procedimento de acordo com a necessidade de cada cliente. Para mim, personalizar é conhecer, ouvir, observar e entender quem está ali.',
+      'Essa foi uma das primeiras bases da profissional que eu me tornei.'
+    ]
+  },
+  {
+    number: '02',
+    title: 'Aos 22 anos, minha vida tomou outro caminho',
+    media: 'Início de uma nova fase',
+    paragraphs: [
+      'Aos 22 anos, deixei a hotelaria para me dedicar à maternidade.',
+      'Durante esse período, continuei cultivando algo que sempre fez parte da minha vida: o cuidado com a autoestima e o autocuidado.',
+      'Foi também nessa fase que comecei a me aproximar profissionalmente da área da beleza. Fiz alguns cursos livres e comecei, aos poucos, a atender como designer de sobrancelhas e com depilação com cera.',
+      'Por um curto período, trabalhei em um salão de beleza. Foi uma experiência importante para entender melhor a rotina da profissão e descobrir em quais áreas eu realmente queria me especializar.'
+    ]
+  },
+  {
+    number: '03',
+    title: 'Dos primeiros atendimentos à minha formação',
+    media: 'Graduação, cursos e primeiros atendimentos',
+    paragraphs: [
+      'Minha trajetória foi acontecendo aos poucos.',
+      'Me especializei em sobrancelhas e micropigmentação e comecei a construir minha própria clientela, atendendo em casa e também em domicílio.',
+      'Ao mesmo tempo em que trabalhava, comecei minha faculdade de Cosmetologia e Estética.',
+      'A formação acadêmica foi um passo importante porque transformou aquilo que havia começado como uma identificação com a área da beleza em uma profissão que eu queria exercer com conhecimento e responsabilidade.',
+      'Também tive a oportunidade de fazer estágio em uma clínica de referência na cidade, conhecendo de perto uma estrutura profissional e diferentes rotinas de atendimento.'
+    ]
+  },
+  {
+    number: '04',
+    title: 'Quando decidi empreender de verdade',
+    media: 'Primeiro espaço em Vicente de Carvalho e equipe',
+    paragraphs: [
+      'Depois dessa etapa, decidi seguir meu próprio caminho.',
+      'Aluguei meu primeiro espaço em Vicente de Carvalho e passei a construir ali uma nova fase da minha carreira.',
+      'Foram anos de muito trabalho, aprendizado e crescimento. Durante esse período, minha estrutura chegou a contar com três funcionárias e construí uma relação muito próxima com minhas clientes.',
+      'Algumas delas estão comigo desde o início da minha carreira.',
+      'Essa é uma das coisas que mais valorizo na minha trajetória: perceber que pessoas que me conheceram quando eu ainda estava começando continuam confiando no meu trabalho muitos anos depois.'
+    ]
+  },
+  {
+    number: '05',
+    title: 'Uma mudança de cidade, mas não de propósito',
+    media: 'São José dos Campos e os Laser Days',
+    paragraphs: [
+      'Em determinado momento, minha família e eu nos mudamos para São José dos Campos.',
+      'Mesmo longe, mantive alguns atendimentos no Guarujá, especialmente os Laser Days, porque havia clientes que já acompanhavam meu trabalho e queriam continuar o tratamento comigo.',
+      'Essa fase mostrou algo que eu já sabia, mas que a distância confirmou ainda mais: o vínculo construído com uma cliente não depende apenas do endereço.',
+      'Depois de aproximadamente um ano, retornamos ao Guarujá.'
+    ]
+  },
+  {
+    number: '06',
+    title: 'De volta ao Guarujá, em uma nova fase',
+    media: 'Retorno ao Guarujá e espaço atual na Enseada',
+    paragraphs: [
+      'Hoje, estou novamente na cidade onde construí grande parte da minha história profissional.',
+      'Mas essa volta também trouxe uma mudança.',
+      'Atualmente, escolhi trabalhar sozinha e estar pessoalmente à frente de cada atendimento.',
+      'Isso me permite acompanhar de perto cada cliente, desde a avaliação até a realização do procedimento, mantendo o cuidado e a atenção que considero importantes no meu trabalho.',
+      'Hoje, meu atendimento está concentrado na Enseada, em um espaço confortável e de fácil acesso, onde trabalho principalmente com três áreas que considero fundamentais para a manutenção da autoestima e do autocuidado: depilação a laser, drenagem linfática personalizada e limpeza de pele.'
+    ]
+  }
+];
+---
+
+<SiteLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: site.professional,
+    jobTitle: 'Esteticista e Cosmetóloga',
+    url: canonical,
+    worksFor: { '@type': 'BeautySalon', name: site.name, url: site.domain },
+    areaServed: { '@type': 'City', name: 'Guarujá' },
+    knowsAbout: ['Depilação a laser', 'Drenagem linfática personalizada', 'Limpeza de pele', 'Cosmetologia e Estética']
+  })}></script>
+
+  <section class="story-hero">
+    <div class="wrap story-hero-grid">
+      <div>
+        <p class="eyebrow">Minha história</p>
+        <h1>Grazielle Diniz <em>Esteticista e Cosmetóloga</em></h1>
+        <p class="story-lead">Uma trajetória construída com escuta, estudo e cuidado — do atendimento na hotelaria ao trabalho pessoal na estética, na Enseada, Guarujá.</p>
+        <a class="btn" href={whatsapp('Olá! Gostaria de conhecer o trabalho da Grazielle.')} target="_blank" rel="noopener">Conversar com a Grazielle</a>
+      </div>
+      <div class="story-hero-placeholder" role="img" aria-label="Placeholder para retrato profissional atual de Grazielle Diniz"><span>+</span><strong>Retrato profissional atual</strong><small>Espaço reservado para uma foto real da Grazielle</small></div>
+    </div>
+  </section>
+
+  <main class="story-main">
+    <div class="wrap story-intro"><p class="eyebrow">Uma história feita de etapas</p><p>Antes de cada procedimento, existe uma pessoa. Esta é a minha trajetória até aqui — e o jeito de cuidar que foi sendo construído em cada fase.</p></div>
+    <div class="timeline wrap">
+      {chapters.map((chapter) => <article class="timeline-entry">
+        <div class="timeline-marker" aria-hidden="true"><span>{chapter.number}</span></div>
+        <div class="timeline-content">
+          <div class="timeline-copy"><p class="eyebrow">Capítulo {chapter.number}</p><h2>{chapter.title}</h2>{chapter.paragraphs.map((paragraph) => <p>{paragraph}</p>)}</div>
+          <div class="timeline-placeholder" role="img" aria-label={`Placeholder para foto: ${chapter.media}`}><span>+</span><strong>{chapter.media}</strong><small>Foto real da trajetória — espaço reservado</small></div>
+        </div>
+      </article>)}
+    </div>
+  </main>
+
+  <section class="story-closing"><div class="wrap closing-grid"><div><p class="eyebrow">Mais de oito anos depois...</p><h2>Continuo acreditando que um bom atendimento começa muito antes do procedimento.</h2></div><div class="closing-copy"><p>Minha trajetória na estética começou de forma simples, com pequenos atendimentos e muita vontade de aprender.</p><p>De lá para cá, vieram a faculdade, especializações, estágio, meu próprio espaço, uma equipe, mudanças, clientes que permaneceram comigo e muitos aprendizados.</p><p>Começa em ouvir. Em entender. Em respeitar o momento e as necessidades de cada pessoa.</p><p class="closing-quote">E, principalmente, em fazer com que a cliente se sinta cuidada — não apenas atendida.</p><div class="closing-placeholder" role="img" aria-label="Placeholder para foto profissional atual"><span>+</span><strong>Foto profissional atual</strong></div></div></div></section>
+
+  <section class="story-links"><div class="wrap"><p class="eyebrow">O cuidado continua</p><h2>Conheça os tratamentos realizados na Enseada.</h2><div class="story-link-list"><a href="/depilacao-laser-guaruja/">Depilação a laser <span>→</span></a><a href="/drenagem-linfatica-guaruja/">Drenagem linfática <span>→</span></a><a href="/limpeza-de-pele-guaruja/">Limpeza de pele <span>→</span></a><a href="/contato/">Contato e localização <span>→</span></a></div></div></section>
+</SiteLayout>
