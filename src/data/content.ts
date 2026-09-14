@@ -26,12 +26,12 @@ export const laserFaqs = [
   ['Homens também podem fazer depilação a laser?', 'Sim. O tratamento pode ser realizado em barba, pescoço, costas, peito, nuca e outras áreas, conforme avaliação.'],
   ['Existe idade mínima para começar?', 'O ideal é iniciar após a puberdade e, para menores de idade, contar com autorização dos responsáveis e avaliação adequada.'],
   ['Pessoas de pele negra podem fazer o procedimento?', 'Sim. Os parâmetros são avaliados e ajustados conforme o fototipo, com foco em segurança e preservação da pele.'],
-  ['A aplicação do laser pode causar câncer de pele?', 'O laser estético utiliza energia luminosa direcionada ao pelo e é diferente de radiações ionizantes. A avaliação individual orienta o procedimento.'],
+  ['A aplicação do laser pode causar câncer de pele?', 'O laser estético não é uma radiação ionizante, mas dúvidas sobre lesões, histórico de câncer de pele ou tratamentos em andamento devem ser discutidas com um médico antes da sessão. A avaliação da pele orienta se o procedimento pode ser realizado.'],
   ['Quanto tempo demora cada sessão?', 'Áreas pequenas podem levar poucos minutos; áreas maiores levam mais tempo. A duração depende da região e do protocolo.'],
   ['Posso continuar durante o verão?', 'Sim, desde que sejam respeitados os cuidados de proteção solar e as orientações recebidas antes e depois da sessão.'],
   ['Posso ir à praia logo após a sessão?', 'Não é o mais indicado. Recomenda-se evitar sol direto, mar e piscina pelo período orientado para a pele se recuperar.'],
   ['Quem tem tatuagem pode aplicar o laser sobre o desenho?', 'O laser não deve ser disparado diretamente sobre a tatuagem. A área é isolada e protegida durante a aplicação.'],
-  ['Quem usa Roacutan ou trata SOP pode fazer?', 'Quem usa medicamentos que sensibilizam a pele deve conversar com o médico e aguardar o período adequado. Pessoas com SOP podem fazer, sabendo que fatores hormonais podem exigir mais sessões e manutenções.']
+  ['Quem usa Roacutan ou trata SOP pode fazer?', 'Quem usa Roacutan ou outro medicamento que sensibilize a pele deve conversar com o médico antes de agendar e seguir o período de suspensão ou liberação indicado. Pessoas com SOP também devem informar a condição na avaliação, pois fatores hormonais podem influenciar a resposta ao tratamento.']
 ];
 
 export const drainageFaqs = [
@@ -45,4 +45,15 @@ export const drainageFaqs = [
   ['Por que a drenagem é recomendada no pós-operatório?', 'Após cirurgia, o procedimento só deve ser realizado com liberação do profissional responsável e por pessoa habilitada, seguindo o protocolo indicado.'],
   ['Quem tem pressão alta pode fazer?', 'A condição precisa estar controlada e ser informada na avaliação. Em caso de dúvida, é necessário seguir orientação médica.'],
   ['Para onde vão os líquidos drenados?', 'As manobras direcionam o líquido para a circulação linfática, que participa do processo natural de filtragem e eliminação do organismo.']
+];
+
+export const skinFaqs = [
+  ['A limpeza de pele dói?', 'A sensação varia conforme a sensibilidade e as extrações indicadas. O atendimento é conduzido com cuidado e qualquer desconforto deve ser comunicado durante a sessão.'],
+  ['Com que frequência devo fazer limpeza de pele?', 'A frequência depende das características da pele, da rotina de cuidados e do objetivo de cada pessoa. A avaliação ajuda a definir um intervalo adequado.'],
+  ['Posso fazer limpeza de pele no verão?', 'Sim, desde que sejam respeitados os cuidados com exposição solar e as orientações recebidas antes e depois do atendimento.'],
+  ['Posso usar maquiagem depois?', 'O ideal é seguir a orientação recebida no atendimento e evitar produtos que possam irritar a pele enquanto ela estiver sensibilizada.'],
+  ['A limpeza pode ser feita em pele acneica ou sensível?', 'Pode fazer sentido em alguns casos, mas a avaliação é importante para observar o momento da pele e definir quais etapas e extrações são adequadas.'],
+  ['Toda limpeza de pele tem extração?', 'Não. As extrações são realizadas quando indicadas para a pele e para o protocolo definido na avaliação.'],
+  ['Quanto tempo dura o atendimento?', 'A duração varia conforme o protocolo e as necessidades observadas na avaliação.'],
+  ['Quais cuidados devo ter depois?', 'Siga as orientações recebidas, evite exposição solar intensa e observe a resposta da pele. Em caso de reação inesperada, procure orientação profissional.']
 ];

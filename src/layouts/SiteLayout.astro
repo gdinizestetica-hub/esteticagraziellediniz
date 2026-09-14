@@ -1,7 +1,20 @@
 ---
 import '../styles/global.css';
 import { site, whatsapp } from '../data/site';
-const { title, description, canonical = site.domain + Astro.url.pathname, image = site.image } = Astro.props;
+const { title, description, canonical = site.domain + Astro.url.pathname, image = site.image, schema } = Astro.props;
+const defaultSchema = {
+  '@context': 'https://schema.org',
+  '@type': ['BeautySalon', 'LocalBusiness'],
+  name: site.name,
+  url: site.domain,
+  telephone: '+55 13 99163-0136',
+  image: site.domain + site.image,
+  address: { '@type': 'PostalAddress', streetAddress: 'Av. Dom Pedro I, 1785, sala 406', addressLocality: 'Guarujá', addressRegion: 'SP', postalCode: '11440-002', addressCountry: 'BR' },
+  areaServed: { '@type': 'City', name: 'Guarujá' },
+  openingHours: ['Mo-Fr 08:00-21:00', 'Sa 08:00-18:00'],
+  sameAs: ['https://instagram.com/esteticagraziellediniz'],
+  aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', bestRating: '5', ratingCount: '57' }
+};
 ---
 <!doctype html>
 <html lang="pt-BR">
@@ -17,12 +30,7 @@ const { title, description, canonical = site.domain + Astro.url.pathname, image 
   <meta property="og:description" content={description} /><meta property="og:url" content={canonical} />
   <meta property="og:image" content={image.startsWith('http') ? image : site.domain + image} />
   <link rel="icon" href="/images/logotipo-fundo-transparente.png" />
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org', '@type': 'BeautySalon', name: site.name,
-    url: site.domain, telephone: '+55 13 99163-0136', image: site.domain + site.image,
-    address: { '@type': 'PostalAddress', streetAddress: 'Av. Dom Pedro I, 1785, sala 406', addressLocality: 'Guarujá', addressRegion: 'SP', addressCountry: 'BR' },
-    areaServed: { '@type': 'City', name: 'Guarujá' }, openingHours: ['Mo-Fr 08:00-21:00', 'Sa 08:00-18:00']
-  })}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(schema ?? defaultSchema)}></script>
 </head>
 <body>
   <header class="site-header"><nav class="wrap nav"><a class="brand" href="/">Grazielle Diniz<small>ESTÉTICA</small></a><div class="nav-links"><a href="/">Início</a><a href="/depilacao-laser-guaruja/">Depilação a laser</a><a href="/drenagem-linfatica-guaruja/">Drenagem Linfática</a><a href="/limpeza-de-pele-guaruja/">Limpeza de pele</a><a href="/blog/">Blog</a><a href="/contato/">Contato</a></div><button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button></nav></header>

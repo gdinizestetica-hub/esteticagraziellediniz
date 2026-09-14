@@ -2,8 +2,9 @@
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import TreatmentHero from '../../components/TreatmentHero.astro';
 import StoryMedia from '../../components/StoryMedia.astro';
-import { whatsapp } from '../../data/site';
+import { whatsapp, treatmentSchema } from '../../data/site';
 import LocationMap from '../../components/LocationMap.astro';
+import { skinFaqs } from '../../data/content';
 const media = [
   { type: 'image', src: '/images/limpeza-de-pele-1.jpg', alt: 'Limpeza de pele na clínica Grazielle Diniz', duration: 'Limpeza' },
   { type: 'image', src: '/images/limpeza-de-pele-2.JPG', alt: 'Detalhe do atendimento de limpeza de pele', duration: 'Limpeza' },
@@ -11,12 +12,14 @@ const media = [
   { type: 'video', src: '/images/limpeza-de-pele-4.mp4', poster: '/images/limpeza-de-pele-1.jpg', alt: 'Vídeo do atendimento de limpeza de pele', duration: 'Vídeo' },
   { type: 'video', src: '/images/limpeza-de-pele-5.mp4', poster: '/images/limpeza-de-pele-1.jpg', alt: 'Vídeo do procedimento de limpeza de pele', duration: 'Vídeo' }
 ];
+const schema = treatmentSchema('Limpeza de pele', '/limpeza-de-pele-guaruja/', 'Limpeza de pele no Guarujá com avaliação e protocolo facial orientado para as necessidades da pele.', skinFaqs);
 ---
-<SiteLayout title="Limpeza de Pele no Guarujá | Grazielle Diniz Estética" description="Limpeza de pele no Guarujá com avaliação e protocolo facial orientado para as necessidades da sua pele, na Enseada.">
+<SiteLayout title="Limpeza de Pele no Guarujá | Grazielle Diniz Estética" description="Limpeza de pele no Guarujá com avaliação e protocolo facial orientado para as necessidades da sua pele, na Enseada." schema={schema}>
 <TreatmentHero hideImage={true} eyebrow="Tratamento facial na Enseada" title="Limpeza de pele no Guarujá" description="Um protocolo facial explicado passo a passo, com avaliação das necessidades da sua pele e cuidados orientados para a sua rotina." cta="Tirar dúvidas pelo WhatsApp" />
 <section class="section story-section"><div class="wrap story-layout"><div><p class="eyebrow">Conheça o atendimento</p><h2>Um cuidado explicado em cada etapa.</h2><p>Veja um pouco do ambiente e conheça quem conduz o atendimento.</p></div><StoryMedia items={media} label="Mídias da limpeza de pele" /></div></section>
 <section class="section"><div class="wrap"><div class="section-head"><p class="eyebrow">Como funciona</p><h2>O cuidado começa antes da extração.</h2><p>Conversamos sobre sua pele, observamos sensibilidades e definimos o que faz sentido para o atendimento daquele dia.</p></div><div class="cards"><article class="card"><span class="number">01</span><h3>Avaliação</h3><p>Entendimento da rotina, queixas e características da pele.</p></article><article class="card"><span class="number">02</span><h3>Protocolo</h3><p>Higienização, renovação e extrações quando indicadas.</p></article><article class="card"><span class="number">03</span><h3>Orientação</h3><p>Cuidados simples para manter a pele confortável após a sessão.</p></article></div></div></section>
 <section class="section sand"><div class="wrap split"><div><p class="eyebrow">Dúvidas comuns</p><h2>Para quem a limpeza pode fazer sentido?</h2></div><ul class="checklist"><li>Para quem percebe poros obstruídos e textura irregular</li><li>Para quem quer preparar a pele para outros cuidados</li><li>Para quem busca uma avaliação antes de escolher um protocolo</li><li>Para quem precisa revisar a rotina de cuidados faciais</li></ul></div></section>
+<section class="section treatment-faq"><div class="wrap faq-narrow"><div class="section-head centered"><p class="eyebrow">Dúvidas frequentes</p><h2>Perguntas sobre limpeza de pele.</h2><p>Informações para conversar com mais clareza sobre o cuidado facial.</p></div><div class="faq">{skinFaqs.map(([question, answer])=><details><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
 <section class="section"><div class="wrap" style="text-align:center"><h2>Quer conversar sobre a sua pele?</h2><p style="margin-inline:auto">Envie uma mensagem e conte o que você gostaria de melhorar. A avaliação ajuda a orientar o próximo passo.</p><a class="btn coral" href={whatsapp('Olá! Gostaria de conversar sobre limpeza de pele.')} target="_blank" rel="noopener">Conversar pelo WhatsApp</a></div></section>
 <section class="section treatment-map-section"><div class="wrap"><LocationMap title="Encontre a clínica na Enseada" /></div></section>
 </SiteLayout>

@@ -6,6 +6,7 @@ import { site, whatsapp } from '../../../src/data/site';
 const canonical = `${site.domain}/grazielle-diniz-esteticista-cosmetologa-guaruja/`;
 const title = 'Grazielle Diniz | Esteticista e Cosmetóloga no Guarujá';
 const description = 'Conheça a trajetória de Grazielle Diniz, esteticista e cosmetóloga na Enseada, Guarujá, sua formação, experiência e forma de cuidar de cada cliente.';
+const schema = { '@context': 'https://schema.org', '@type': 'Person', '@id': `${canonical}#person`, name: site.professional, jobTitle: 'Esteticista e Cosmetóloga', url: canonical, worksFor: { '@type': 'BeautySalon', '@id': `${site.domain}/#business`, name: site.name, url: site.domain }, areaServed: { '@type': 'City', name: 'Guarujá' }, knowsAbout: ['Depilação a laser', 'Drenagem linfática personalizada', 'Limpeza de pele', 'Cosmetologia e Estética'] };
 
 const chapters = [
   {
@@ -95,17 +96,7 @@ const chapters = [
 ];
 ---
 
-<SiteLayout title={title} description={description} canonical={canonical} image="/images/esteticista-grazielle-diniz-foto-atual.png">
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: site.professional,
-    jobTitle: 'Esteticista e Cosmetóloga',
-    url: canonical,
-    worksFor: { '@type': 'BeautySalon', name: site.name, url: site.domain },
-    areaServed: { '@type': 'City', name: 'Guarujá' },
-    knowsAbout: ['Depilação a laser', 'Drenagem linfática personalizada', 'Limpeza de pele', 'Cosmetologia e Estética']
-  })}></script>
+<SiteLayout title={title} description={description} canonical={canonical} image="/images/esteticista-grazielle-diniz-foto-atual.png" schema={schema}>
 
   <section class="story-hero">
     <div class="wrap story-hero-grid">

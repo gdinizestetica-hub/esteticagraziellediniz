@@ -18,3 +18,11 @@ export const treatments = [
 ];
 
 export const whatsapp = (message: string) => `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`;
+
+export const treatmentSchema = (name: string, url: string, description: string, faqs: string[][]) => ({
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'Service', '@id': `${site.domain}${url}#service`, name, serviceType: name, description, url, provider: { '@type': 'BeautySalon', name: site.name, url: site.domain }, areaServed: { '@type': 'City', name: 'Guarujá' } },
+    { '@type': 'FAQPage', mainEntity: faqs.map(([question, answer]) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })) }
+  ]
+});

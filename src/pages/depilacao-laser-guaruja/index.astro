@@ -2,12 +2,13 @@
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import TreatmentHero from '../../components/TreatmentHero.astro';
 import StoryMedia from '../../components/StoryMedia.astro';
-import { whatsapp } from '../../data/site';
+import { whatsapp, treatmentSchema } from '../../data/site';
 import LocationMap from '../../components/LocationMap.astro';
 import { laserFaqs } from '../../data/content';
 const media = [{ type: 'video', src: '/video-background.mp4', alt: 'Vídeo vertical sobre o atendimento de depilação a laser', duration: 'Vídeo', loop: true }];
+const schema = treatmentSchema('Depilação a laser', '/depilacao-laser-guaruja/', 'Depilação a laser na Enseada, Guarujá, com avaliação, planejamento de sessões e parâmetros ajustados conforme as características de cada pele.', laserFaqs);
 ---
-<SiteLayout title="Depilação a Laser na Enseada, Guarujá - SP | Grazielle Diniz" description="Depilação a laser na Enseada, Guarujá, com avaliação, planejamento de sessões e orientação para diferentes fototipos.">
+<SiteLayout title="Depilação a Laser na Enseada, Guarujá - SP | Grazielle Diniz" description="Depilação a laser na Enseada, Guarujá, com avaliação, planejamento de sessões e orientação para diferentes fototipos." schema={schema}>
 <TreatmentHero hideImage={true} eyebrow="Depilação a laser · Guarujá" title="Depilação a Laser na Enseada - Guarujá - SP" description="A indicação, os intervalos e a expectativa de cada caso são conversados na avaliação. O atendimento utiliza o equipamento Ácrus HTM Triple Wave, conforme o protocolo definido para você." cta="Conhecer o tratamento" />
 <section class="section story-section"><div class="wrap story-layout"><div><p class="eyebrow">Por dentro do atendimento</p><h2>Veja um pouco do espaço e da experiência.</h2><p>Uma seleção curta de mídias reais para você conhecer o ambiente antes de agendar.</p></div><StoryMedia items={media} label="Mídias da depilação a laser" /></div></section>
 <section class="section"><div class="wrap"><div class="section-head"><p class="eyebrow">A sessão</p><h2>Você sabe o que acontece em cada etapa.</h2></div><div class="cards"><article class="card"><span class="number">01</span><h3>Avaliação</h3><p>Conversamos sobre pele, pelos, áreas de interesse e histórico de cuidados.</p></article><article class="card"><span class="number">02</span><h3>Preparação</h3><p>Você recebe orientações sobre o que fazer antes da sessão.</p></article><article class="card"><span class="number">03</span><h3>Aplicação</h3><p>A sessão é realizada de acordo com o protocolo e os parâmetros definidos.</p></article></div></div></section>
