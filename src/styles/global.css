@@ -54,3 +54,11 @@ h1{font-size:clamp(2.15rem,3.8vw,3.65rem)}.home-hero h1{font-size:clamp(2.35rem,
   .home-hero .text-link{color:#fff;border-color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.3)}
   .home-hero .text-link span{color:#fff}
 }
+
+/* Mobile: cabeçalho reduzido ao único controle de navegação */
+@media(max-width:800px){
+  .site-header{background:transparent;border-bottom:0;box-shadow:none;backdrop-filter:none;pointer-events:none}
+  .site-header .nav{min-height:58px;justify-content:flex-end;padding-top:.35rem}
+  .site-header .brand{display:none}
+  .site-header .menu-toggle{pointer-events:auto;margin-right:0;background:rgba(255,255,255,.94);box-shadow:0 5px 18px rgba(23,63,58,.14)}
+}
