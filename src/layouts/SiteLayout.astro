@@ -5,6 +5,7 @@ const { title, description, canonical = site.domain + Astro.url.pathname, image 
 const defaultSchema = {
   '@context': 'https://schema.org',
   '@type': ['BeautySalon', 'LocalBusiness'],
+  '@id': `${site.domain}/#business`,
   name: site.name,
   url: site.domain,
   telephone: '+55 13 99163-0136',

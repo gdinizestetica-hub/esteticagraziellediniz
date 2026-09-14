@@ -1,12 +1,12 @@
 ---
-import SiteLayout from '../../../src/layouts/SiteLayout.astro';
-import StoryMedia from '../../../src/components/StoryMedia.astro';
-import { site, whatsapp } from '../../../src/data/site';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import StoryMedia from '../../components/StoryMedia.astro';
+import { site, whatsapp } from '../../data/site';
 
 const canonical = `${site.domain}/grazielle-diniz-esteticista-cosmetologa-guaruja/`;
 const title = 'Grazielle Diniz | Esteticista e Cosmetóloga no Guarujá';
 const description = 'Conheça a trajetória de Grazielle Diniz, esteticista e cosmetóloga na Enseada, Guarujá, sua formação, experiência e forma de cuidar de cada cliente.';
-const schema = { '@context': 'https://schema.org', '@type': 'Person', '@id': `${canonical}#person`, name: site.professional, jobTitle: 'Esteticista e Cosmetóloga', url: canonical, worksFor: { '@type': 'BeautySalon', '@id': `${site.domain}/#business`, name: site.name, url: site.domain }, areaServed: { '@type': 'City', name: 'Guarujá' }, knowsAbout: ['Depilação a laser', 'Drenagem linfática personalizada', 'Limpeza de pele', 'Cosmetologia e Estética'] };
+const schema = { '@context': 'https://schema.org', '@type': 'Person', '@id': `${canonical}#person`, name: site.professional, jobTitle: 'Esteticista e Cosmetóloga', url: canonical, worksFor: { '@id': `${site.domain}/#business` }, areaServed: { '@type': 'City', name: 'Guarujá' }, knowsAbout: ['Depilação a laser', 'Drenagem linfática personalizada', 'Limpeza de pele', 'Cosmetologia e Estética'] };
 
 const chapters = [
   {
