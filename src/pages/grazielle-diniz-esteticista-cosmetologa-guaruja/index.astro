@@ -1,5 +1,6 @@
 ---
 import SiteLayout from '../../../src/layouts/SiteLayout.astro';
+import StoryMedia from '../../../src/components/StoryMedia.astro';
 import { site, whatsapp } from '../../../src/data/site';
 
 const canonical = `${site.domain}/grazielle-diniz-esteticista-cosmetologa-guaruja/`;
@@ -10,7 +11,7 @@ const chapters = [
   {
     number: '01',
     title: 'Antes da estética, aprendi a cuidar da experiência de quem está do outro lado',
-    media: 'Período no Sofitel Guarujá Jequitimar',
+    media: null,
     paragraphs: [
       'Antes de trabalhar com estética, trabalhei na recepção do Sofitel Guarujá Jequitimar, um resort de alto padrão onde o atendimento fazia parte de uma cultura muito presente no dia a dia.',
       'Os treinamentos eram constantes. Aprendi sobre postura profissional, ética, cordialidade e, principalmente, sobre perceber as necessidades de cada pessoa para oferecer uma experiência realmente bem cuidada.',
@@ -22,7 +23,7 @@ const chapters = [
   {
     number: '02',
     title: 'Aos 22 anos, minha vida tomou outro caminho',
-    media: 'Início de uma nova fase',
+    media: { type: 'image', src: '/images/inicio-de-uma-nova-fase.jpg', alt: 'Início de uma nova fase na trajetória da Grazielle' },
     paragraphs: [
       'Aos 22 anos, deixei a hotelaria para me dedicar à maternidade.',
       'Durante esse período, continuei cultivando algo que sempre fez parte da minha vida: o cuidado com a autoestima e o autocuidado.',
@@ -33,7 +34,17 @@ const chapters = [
   {
     number: '03',
     title: 'Dos primeiros atendimentos à minha formação',
-    media: 'Graduação, cursos e primeiros atendimentos',
+    media: {
+      type: 'story',
+      label: 'Graduação, cursos e congressos',
+      items: [
+        { type: 'image', src: '/images/graduacao.jpg', alt: 'Graduação em Cosmetologia e Estética' },
+        { type: 'image', src: '/images/cursos-1.jpg', alt: 'Curso realizado por Grazielle Diniz' },
+        { type: 'image', src: '/images/cursos-2.jpg', alt: 'Curso realizado por Grazielle Diniz' },
+        { type: 'image', src: '/images/congresso.jpg', alt: 'Participação em congresso de estética' },
+        { type: 'image', src: '/images/congresso-2.jpg', alt: 'Participação em congresso de estética' }
+      ]
+    },
     paragraphs: [
       'Minha trajetória foi acontecendo aos poucos.',
       'Me especializei em sobrancelhas e micropigmentação e comecei a construir minha própria clientela, atendendo em casa e também em domicílio.',
@@ -45,7 +56,7 @@ const chapters = [
   {
     number: '04',
     title: 'Quando decidi empreender de verdade',
-    media: 'Primeiro espaço em Vicente de Carvalho e equipe',
+    media: { type: 'image', src: '/images/primeiro-espaco-em-vicente-de-carvalho.jpg', alt: 'Primeiro espaço profissional em Vicente de Carvalho' },
     paragraphs: [
       'Depois dessa etapa, decidi seguir meu próprio caminho.',
       'Aluguei meu primeiro espaço em Vicente de Carvalho e passei a construir ali uma nova fase da minha carreira.',
@@ -57,7 +68,7 @@ const chapters = [
   {
     number: '05',
     title: 'Uma mudança de cidade, mas não de propósito',
-    media: 'São José dos Campos e os Laser Days',
+    media: { type: 'image', src: '/images/sao-jose-dos-campos.jpg', alt: 'Período em São José dos Campos e os Laser Days' },
     paragraphs: [
       'Em determinado momento, minha família e eu nos mudamos para São José dos Campos.',
       'Mesmo longe, mantive alguns atendimentos no Guarujá, especialmente os Laser Days, porque havia clientes que já acompanhavam meu trabalho e queriam continuar o tratamento comigo.',
@@ -68,7 +79,11 @@ const chapters = [
   {
     number: '06',
     title: 'De volta ao Guarujá, em uma nova fase',
-    media: 'Retorno ao Guarujá e espaço atual na Enseada',
+    media: {
+      type: 'story',
+      label: 'De volta ao Guarujá',
+      items: [{ type: 'video', src: '/images/de-volta-ao-guaruja.mp4', alt: 'Retorno ao Guarujá' }]
+    },
     paragraphs: [
       'Hoje, estou novamente na cidade onde construí grande parte da minha história profissional.',
       'Mas essa volta também trouxe uma mudança.',
@@ -111,7 +126,7 @@ const chapters = [
         <div class="timeline-marker" aria-hidden="true"><span>{chapter.number}</span></div>
         <div class="timeline-content">
           <div class="timeline-copy"><p class="eyebrow">Capítulo {chapter.number}</p><h2>{chapter.title}</h2>{chapter.paragraphs.map((paragraph) => <p>{paragraph}</p>)}</div>
-          <div class="timeline-placeholder" role="img" aria-label={`Placeholder para foto: ${chapter.media}`}><span>+</span><strong>{chapter.media}</strong><small>Foto real da trajetória — espaço reservado</small></div>
+          {chapter.media?.type === 'story' ? <div class="timeline-media"><StoryMedia items={chapter.media.items} label={chapter.media.label} /></div> : chapter.media ? <div class="timeline-image"><img src={chapter.media.src} alt={chapter.media.alt} loading="lazy" /></div> : null}
         </div>
       </article>)}
     </div>
