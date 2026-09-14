@@ -3,6 +3,7 @@ import SiteLayout from '../../layouts/SiteLayout.astro';
 import TreatmentHero from '../../components/TreatmentHero.astro';
 import StoryMedia from '../../components/StoryMedia.astro';
 import { whatsapp } from '../../data/site';
+import LocationMap from '../../components/LocationMap.astro';
 import { drainageFaqs } from '../../data/content';
 const media = [{ type: 'video', src: '/images/drenagem-linfatica-1.mp4', poster: '/images/foto-da-profissional-esteticista-grazielle-diniz-guaruja.png', alt: 'Vídeo de drenagem linfática premium no Guarujá', duration: 'Drenagem' }];
 ---
@@ -13,4 +14,5 @@ const media = [{ type: 'video', src: '/images/drenagem-linfatica-1.mp4', poster:
 <section class="section sage"><div class="wrap split"><div><p class="eyebrow">Atendimento</p><h2>O protocolo é ajustado a partir da conversa.</h2><p>A sessão combina manobras manuais e orientações de acordo com as necessidades identificadas. Em casos específicos, é importante informar condições de saúde e seguir liberações profissionais.</p></div><ul class="checklist"><li>Conversa inicial sobre suas queixas</li><li>Ambiente silencioso e climatizado</li><li>Movimentos manuais calmos e precisos</li><li>Orientações ao final do atendimento</li></ul></div></section>
 <section class="section treatment-faq"><div class="wrap faq-narrow"><div class="section-head centered"><p class="eyebrow">Dúvidas frequentes</p><h2>Perguntas sobre drenagem linfática.</h2><p>Informações para entender as modalidades e conversar com segurança na avaliação.</p></div><div class="faq">{drainageFaqs.map(([question, answer])=><details><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
 <section class="section"><div class="wrap" style="text-align:center"><h2>Quer saber qual drenagem faz sentido para você?</h2><p style="margin-inline:auto">Fale pelo WhatsApp e explique o que está sentindo. A avaliação orienta a conversa.</p><a class="btn" href={whatsapp('Olá! Gostaria de saber mais sobre drenagem linfática premium e tradicional.')} target="_blank" rel="noopener">Tirar dúvidas</a></div></section>
+<section class="section treatment-map-section"><div class="wrap"><LocationMap title="Encontre a clínica na Enseada" /></div></section>
 </SiteLayout>

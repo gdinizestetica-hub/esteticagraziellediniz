@@ -3,6 +3,7 @@ import SiteLayout from '../../layouts/SiteLayout.astro';
 import TreatmentHero from '../../components/TreatmentHero.astro';
 import StoryMedia from '../../components/StoryMedia.astro';
 import { whatsapp } from '../../data/site';
+import LocationMap from '../../components/LocationMap.astro';
 import { laserFaqs } from '../../data/content';
 const media = [{ type: 'video', src: '/video-background.mp4', alt: 'Vídeo vertical sobre o atendimento de depilação a laser', duration: 'Vídeo', loop: true }];
 ---
@@ -13,4 +14,5 @@ const media = [{ type: 'video', src: '/video-background.mp4', alt: 'Vídeo verti
 <section class="section sand"><div class="wrap split"><div><p class="eyebrow">Áreas comuns</p><h2>Atendimento para diferentes regiões do corpo.</h2></div><ul class="checklist"><li>Axilas e virilha</li><li>Rosto e buço</li><li>Pernas e braços</li><li>Costas, peito e abdômen</li></ul></div></section>
 <section class="section treatment-faq"><div class="wrap faq-narrow"><div class="section-head centered"><p class="eyebrow">Dúvidas frequentes</p><h2>Perguntas sobre depilação a laser.</h2><p>Informações para você chegar à avaliação com mais clareza.</p></div><div class="faq">{laserFaqs.map(([question, answer])=><details><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
 <section class="section"><div class="wrap" style="text-align:center"><h2>Quer entender se é indicado para você?</h2><p style="margin-inline:auto">A avaliação sem custo é o melhor ponto de partida para falar sobre pele, áreas e expectativas.</p><a class="btn" href={whatsapp('Olá! Gostaria de agendar uma avaliação para depilação a laser.')} target="_blank" rel="noopener">Agendar avaliação</a></div></section>
+<section class="section treatment-map-section"><div class="wrap"><LocationMap title="Encontre a clínica na Enseada" /></div></section>
 </SiteLayout>

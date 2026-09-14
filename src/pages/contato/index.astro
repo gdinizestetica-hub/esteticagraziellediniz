@@ -1,8 +1,10 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import { site, whatsapp } from '../../data/site';
+import LocationMap from '../../components/LocationMap.astro';
 ---
 <SiteLayout title="Contato | Grazielle Diniz Estética no Guarujá" description="Entre em contato com Grazielle Diniz Estética na Enseada, Guarujá. Consulte horários, localização e agende sua avaliação.">
 <section class="page-hero"><div class="wrap"><p class="eyebrow">Enseada · Guarujá</p><h1>Fale com a Grazielle</h1><p>Use o WhatsApp para tirar dúvidas, verificar horários e agendar uma avaliação.</p></div></section>
 <section class="section"><div class="wrap location"><div class="location-card"><p class="eyebrow">Onde estamos</p><h2 style="color:#fff">Um endereço fácil de encontrar.</h2><p>{site.address}</p><p>{site.reference}</p><p><strong>Horário:</strong><br />{site.hours}</p><a class="btn coral" href={whatsapp('Olá! Gostaria de agendar uma avaliação.')} target="_blank" rel="noopener">Abrir WhatsApp</a></div><div class="card"><h3>Como chegar</h3><p>Av. Dom Pedro I, 1785, sala 406 — Enseada, Guarujá/SP.</p><p>O espaço conta com elevador, ambiente climatizado e fácil acesso.</p><a class="card-link" href="https://maps.google.com/?q=Av.+Dom+Pedro+I,+1785,+Guarujá" target="_blank" rel="noopener">Abrir no mapa →</a></div></div></section>
+<section class="section contact-map-section"><div class="wrap"><LocationMap title="Veja a localização no mapa" /></div></section>
 </SiteLayout>

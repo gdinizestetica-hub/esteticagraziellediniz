@@ -1,0 +1,13 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import { blogPosts, getBlogPost } from '../../data/blog';
+export function getStaticPaths() {
+  return blogPosts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+const post = Astro.props.post ?? getBlogPost(Astro.params.slug ?? '');
+if (!post) throw new Error('Artigo não encontrado');
+const related = blogPosts.filter((item) => item.slug !== post.slug).slice(0, 3);
+---
+<SiteLayout title={`${post.title} | Grazielle Diniz Estética`} description={post.excerpt} canonical={`https://esteticagraziellediniz.com.br/blog/${post.slug}/`}>
+  <article class="blog-post"><header class="blog-post-header"><div class="wrap blog-post-header-inner"><a class="blog-back" href="/blog/">← Voltar ao blog</a><p class="eyebrow">{post.category} · {post.date}</p><h1>{post.title}</h1><p class="blog-lead">{post.excerpt}</p></div></header><div class="wrap blog-post-layout"><div class="blog-prose">{post.sections.map(([heading, text])=><section><h2>{heading}</h2><p>{text}</p></section>)}<div class="blog-post-cta"><p>Quer conversar sobre o tratamento?</p><a class="btn" href="/contato/">Falar com a Grazielle →</a></div></div><aside class="blog-aside"><p class="eyebrow">Leia também</p>{related.map((item)=><a href={`/blog/${item.slug}/`}><strong>{item.title}</strong><small>{item.date}</small></a>)}</aside></div></article>
+</SiteLayout>
