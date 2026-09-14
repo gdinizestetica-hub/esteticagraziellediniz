@@ -84,3 +84,12 @@ h1{font-size:clamp(2.15rem,3.8vw,3.65rem)}.home-hero h1{font-size:clamp(2.35rem,
   .home-hero:before{display:none!important}
 }
 @media(min-width:801px){.mobile-hero-bg{display:none}}
+
+/* Fundo mobile confinado ao primeiro bloco; sem position:fixed para evitar saltos */
+@media(max-width:800px){
+  main:has(.mobile-hero-bg){position:relative;z-index:auto}
+  .home-hero{position:relative;isolation:isolate;overflow:hidden;background:transparent!important}
+  .mobile-hero-bg{display:block;position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(180deg,rgba(12,41,38,.28) 0%,rgba(12,41,38,.42) 38%,rgba(12,41,38,.9) 100%),url('/images/foto-da-profissional-esteticista-grazielle-diniz-guaruja.png');background-position:center 18%;background-size:cover;background-repeat:no-repeat}
+  .home-hero-grid{position:relative;z-index:1}
+}
+@media(min-width:801px){.mobile-hero-bg{display:none}.home-process .process-grid{grid-template-columns:1fr;max-width:760px}}
