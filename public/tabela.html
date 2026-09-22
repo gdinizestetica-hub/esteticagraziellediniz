@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <title>Planos e Pacotes | Grazielle Diniz - Estética e Depilação a Laser</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary: #004D40; 
+            --primary: #004D40;
             --primary-light: #00695C;
             --primary-very-light: rgba(0, 77, 64, 0.08);
-            --bg: #F8F8F5; 
+            --bg: #F8F8F5;
             --white: #FFFFFF;
             --text-dark: #2C3E50;
             --text-muted: #606F7B;
             --border: #D1D5DB;
-            --discount-color: #2E7D32; 
+            --discount-color: #2E7D32;
             --danger: #E53935;
-            --warning-bg: #FFFBEB; 
+            --warning-bg: #FFFBEB;
             --warning-border: #F59E0B;
             --warning-text: #B45309;
         }
@@ -48,7 +48,7 @@
             background-color: var(--white);
             text-align: center;
             padding-top: 20px;
-            position: relative; 
+            position: relative;
         }
 
         .header-logo-top {
@@ -56,7 +56,7 @@
             max-width: 300px;
             height: auto;
             display: inline-block;
-            margin-bottom: -1px; 
+            margin-bottom: -1px;
         }
 
         .shape-divider {
@@ -66,24 +66,24 @@
             width: 100%;
             overflow: hidden;
             line-height: 0;
-            transform: rotate(180deg); 
+            transform: rotate(180deg);
         }
 
         .shape-divider svg {
             position: relative;
             display: block;
             width: calc(100% + 1.3px);
-            height: 60px; 
+            height: 60px;
         }
 
         .shape-divider .shape-fill { fill: var(--bg); }
 
         .container {
-            max-width: 600px; 
+            max-width: 600px;
             margin: 0 auto;
-            padding: 0 15px 120px; 
+            padding: 0 15px 120px;
             position: relative;
-            z-index: 10; 
+            z-index: 10;
         }
 
         header.content-header { text-align: center; margin-bottom: 25px; margin-top: 15px; }
@@ -97,7 +97,7 @@
         }
 
         .typing-container { text-align: center; margin-bottom: 15px; min-height: 40px; }
-        
+
         .payment-title {
             font-family: 'Inter', sans-serif;
             font-size: 0.95rem;
@@ -270,20 +270,20 @@
 
         .cart-actions { display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px; }
         .btn-clear { width: 100%; background: none; border: 1px solid var(--border); color: var(--text-muted); padding: 10px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; }
-        
-        .btn-add-more { 
+
+        .btn-add-more {
             width: 100vw; max-width: 100%;
-            background: var(--primary-very-light); 
-            color: var(--primary); 
-            border: 1px solid rgba(0, 77, 64, 0.2); 
-            padding: 10px; 
-            border-radius: 6px; 
-            cursor: pointer; 
-            font-size: 0.85rem; 
-            font-weight: 600; 
+            background: var(--primary-very-light);
+            color: var(--primary);
+            border: 1px solid rgba(0, 77, 64, 0.2);
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
             transition: 0.2s;
         }
-        
+
         .payment-selector { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; margin-top: 5px; margin-bottom: 15px; font-family: 'Inter', sans-serif; color: var(--text-dark); }
 
         .faq-section { margin-top: 40px; padding-top: 40px; border-top: 1px solid var(--border); }
@@ -317,7 +317,7 @@
 
         #chat-button {
             position: fixed;
-            bottom: 90px; 
+            bottom: 90px;
             right: 20px;
             padding: 12px 24px;
             background-color: var(--primary);
@@ -334,8 +334,8 @@
             z-index: 999;
             transition: all 0.3s ease;
         }
-        #chat-button:hover { 
-            transform: translateY(-3px); 
+        #chat-button:hover {
+            transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(0,77,64,0.4);
         }
 
@@ -405,7 +405,7 @@
             align-self: flex-end;
             border-bottom-right-radius: 2px;
         }
-        
+
         .loading-dots {
             display: flex; gap: 4px; padding: 5px;
         }
@@ -467,7 +467,7 @@
     <div class="typing-container">
         <h3 class="payment-title" id="typed-text"></h3><span class="typing-cursor"></span>
     </div>
-    
+
     <div class="discount-persistent-notice">
         <strong>Monte seu Combo:</strong> ao acrescentar mais de uma região ao seu carrinho, você garante automaticamente descontos progressivos especiais em cada região adicionada!
     </div>
@@ -475,7 +475,7 @@
     <div class="discount-persistent-notice">
         <strong>Nota explicativa:</strong> O protocolo recomendado para eliminação duradoura dos pelos costuma girar em torno de 8 a 10 sessões, variando conforme a resposta biológica individual. Na Estética Grazielle Diniz, oferecemos a contratação em ciclos modulares de 5 sessões como uma facilidade financeira, permitindo que você acompanhe sua evolução sem se prender a contratos longos. Ao final da 5ª sessão, realizamos uma reavaliação personalizada para definir se há necessidade de um novo ciclo ou apenas manutenções pontuais.
     </div>
-    
+
     <div id="cards-container"></div>
 
     <h2 class="section-title">Combos Mais Procurados</h2>
@@ -487,7 +487,7 @@
             <h2 class="section-title" style="border:none; margin-bottom: 5px;">Perguntas Frequentes</h2>
             <p class="faq-subtitle">Tire todas as suas dúvidas de maneira simples e transparente</p>
         </div>
-        
+
         <div class="faq-item">
             <button class="faq-question" onclick="toggleFaq(this)">
                 <span>Por que escolher a Grazielle Diniz para o tratamento de epilação a laser?</span>
@@ -749,13 +749,13 @@
         </div>
         <button class="close-chat" onclick="toggleChat()">×</button>
     </div>
-    
+
     <div class="chat-messages" id="chat-messages">
         <div class="message bot-message">
             Olá! Sou a assistente virtual da Grazi. Como posso te ajudar com os pacotes e tratamentos de laser hoje? ✨
         </div>
     </div>
-    
+
     <div class="chat-input-area">
         <input type="text" id="chat-input" placeholder="Digite sua dúvida..." onkeypress="handleChatEnter(event)">
         <button id="send-button" onclick="sendMessage()">
@@ -766,7 +766,7 @@
 
 <script>
     const pricing = {
-        cartao: { label: "Preço padrão", inst: 1, sessions: 5, data: { PP: 199.50, P: 274.50, M: 449.50, G: 499.50, GG: 599.50 } }
+        cartao: { label: "Preço padrão", inst: 5, sessions: 5, data: { PP: 199.50, P: 274.50, M: 449.50, G: 499.50, GG: 599.50 } }
     };
 
     const areaLists = {
@@ -778,49 +778,49 @@
     };
 
     const sizeNames = { PP: "Tamanho PP", P: "Tamanho P", M: "Tamanho M", G: "Tamanho G", GG: "Tamanho GG" };
-    
+
     const comboDefinitions = [
-        { 
+        {
             id: "essencial_1",
-            title: "Essencial 1", 
-            desc: "Inclui: Meia Perna, Virilha Completa, Perianal, Axilas e Buço.", 
+            title: "Essencial 1",
+            desc: "Inclui: Meia Perna, Virilha Completa, Perianal, Axilas e Buço.",
             areas: [
-                {id: 'Meia Perna', size: 'G'}, 
-                {id: 'Virilha Completa (s/ ânus)', size: 'M'}, 
+                {id: 'Meia Perna', size: 'G'},
+                {id: 'Virilha Completa (s/ ânus)', size: 'M'},
                 {id: 'Perianal', size: 'P'},
                 {id: 'Axilas', size: 'P'},
                 {id: 'Buço', size: 'PP'}
-            ] 
+            ]
         },
-        { 
+        {
             id: "essencial_2",
-            title: "Essencial 2", 
-            desc: "Inclui: Virilha Completa, Perianal, Axilas e Buço.", 
+            title: "Essencial 2",
+            desc: "Inclui: Virilha Completa, Perianal, Axilas e Buço.",
             areas: [
-                {id: 'Virilha Completa (s/ ânus)', size: 'M'}, 
+                {id: 'Virilha Completa (s/ ânus)', size: 'M'},
                 {id: 'Perianal', size: 'P'},
                 {id: 'Axilas', size: 'P'},
                 {id: 'Buço', size: 'PP'}
-            ] 
+            ]
         },
-        { 
+        {
             id: "essencial_3",
-            title: "Essencial 3", 
-            desc: "Inclui: Virilha Completa com Perianal e Axilas.", 
+            title: "Essencial 3",
+            desc: "Inclui: Virilha Completa com Perianal e Axilas.",
             areas: [
-                {id: 'Virilha Completa (s/ ânus)', size: 'M'}, 
+                {id: 'Virilha Completa (s/ ânus)', size: 'M'},
                 {id: 'Perianal', size: 'P'},
                 {id: 'Axilas', size: 'P'}
-            ] 
+            ]
         },
-        { 
+        {
             id: "braco_completo",
-            title: "Braço Completo", 
-            desc: "Inclui: Braço e Antebraço.", 
+            title: "Braço Completo",
+            desc: "Inclui: Braço e Antebraço.",
             areas: [
-                {id: 'Braço', size: 'G'}, 
+                {id: 'Braço', size: 'G'},
                 {id: 'Antebraço', size: 'G'}
-            ] 
+            ]
         },
         { title: "Rosto Completo", desc: "Buço, Mento (queixo), Costeletas e Maçã do Rosto.", areas: [{id: 'Buço', size: 'PP'}, {id: 'Mento (queixo)', size: 'PP'}, {id: 'Costeletas', size: 'PP'}, {id: 'Maçã do Rosto', size: 'PP'}] },
         { title: "Perna Completa", desc: "Inclui: Coxas e Meia Perna.", areas: [{id: 'Coxas', size: 'GG'}, {id: 'Meia Perna', size: 'G'}] },
@@ -830,13 +830,13 @@
     ];
 
     let currentMethod = 'cartao';
-    let selectedAreas = []; 
-    let selectedCombos = []; 
+    let selectedAreas = [];
+    let selectedCombos = [];
     let lastConflictMessage = '';
 
     const phraseToType = "Escolha suas regiões para montar seu pacote:";
     let charIndex = 0;
-    const typingSpeed = 35; 
+    const typingSpeed = 35;
 
     function typeWriterEffect() {
         if (charIndex < phraseToType.length) {
@@ -910,7 +910,7 @@
 
     function renderCards() {
         const container = document.getElementById('cards-container');
-        
+
         container.innerHTML = Object.keys(areaLists).map(size => {
             const sizeAreas = areaLists[size];
             return `
@@ -937,7 +937,7 @@
     function renderCombos() {
         const container = document.getElementById('combos-container');
         container.innerHTML = '';
-        
+
         comboDefinitions.forEach((combo, idx) => {
             const isComboSelected = selectedCombos.some(c => c.title === combo.title);
 
@@ -967,7 +967,7 @@
 
             // Regra: Virilha Completa x Virilha Cavada (Completa prevalece)
             if (areaId === "Virilha Cavada") {
-                let hasCompleta = selectedAreas.some(a => a.id === "Virilha Completa (s/ ânus)") || 
+                let hasCompleta = selectedAreas.some(a => a.id === "Virilha Completa (s/ ânus)") ||
                                   selectedCombos.some(c => c.areas.some(ca => ca.id === "Virilha Completa (s/ ânus)"));
                 if (hasCompleta) {
                     checkbox.checked = false;
@@ -1113,7 +1113,7 @@
     // desconto progressivo, não importa de qual combo vieram.
     function calculateCart() {
         const pricesObj = pricing[currentMethod].data;
-        
+
         let allAreasFlat = [...selectedAreas];
         selectedCombos.forEach(combo => {
             combo.areas.forEach(a => {
@@ -1142,7 +1142,7 @@
 
             totalFull += basePrice;
             totalDiscounted += finalPrice;
-            
+
             itemDetails.push({ ...item, basePrice, finalPrice });
         });
 
@@ -1165,12 +1165,12 @@
             };
         });
 
-        return { 
-            items: itemDetails, 
+        return {
+            items: itemDetails,
             combos: comboSummaries,
-            totalFull, 
-            totalDiscounted, 
-            savings: totalFull - totalDiscounted 
+            totalFull,
+            totalDiscounted,
+            savings: totalFull - totalDiscounted
         };
     }
 
@@ -1206,7 +1206,7 @@
         } else {
             alertBox.innerHTML = '';
         }
-        
+
         let htmlContent = '';
 
         if (calc.combos && calc.combos.length > 0) {
@@ -1252,10 +1252,13 @@
         const instCount = pricing[currentMethod].inst;
         const valFinal = calc.totalDiscounted;
 
-        let summaryHTML = `<div class="summary-row summary-total"><span>Total Final:</span> <span>${formatMoney(valFinal)}</span></div>`;
-        
+        const sessionCount = pricing[currentMethod].sessions;
+        const pricePerSession = valFinal / sessionCount;
+        let summaryHTML = `<div class="summary-row summary-total"><span>Total do pacote:</span> <span>${formatMoney(valFinal)}</span></div>`;
+        summaryHTML += `<div class="summary-row" style="color: var(--primary);"><span>No pacote com ${sessionCount} sessões:</span> <span>${formatMoney(pricePerSession)} por sessão</span></div>`;
+
         if (isInst) {
-            summaryHTML += `<div class="summary-row" style="justify-content: flex-end; font-size: 0.85rem; color: var(--primary);">em até ${instCount}x de ${formatMoney(valFinal / instCount)}</div>`;
+            summaryHTML += `<div class="summary-row" style="justify-content: flex-end; font-size: 0.85rem; color: var(--primary);">Pagamento em até ${instCount}x sem juros de ${formatMoney(valFinal / instCount)}</div>`;
         }
 
         document.getElementById('cart-summary').innerHTML = summaryHTML;
@@ -1295,7 +1298,7 @@
 
         const calc = calculateCart();
         let text = "Olá Grazi! Montei meu pacote no site:\n\n*Itens Selecionados:*\n";
-        
+
         if (calc.combos && calc.combos.length > 0) {
             calc.combos.forEach(combo => {
                 text += `- Combo ${combo.title} - De: ${formatMoney(combo.totalFull)} Por: ${formatMoney(combo.totalDiscounted)}\n`;
@@ -1311,9 +1314,10 @@
 
         text += `\n*Forma de Pagamento:* ${pricing[currentMethod].label}`;
         text += `\n*Valor Total:* ${formatMoney(calc.totalDiscounted)}`;
-        
+        text += `\n*Pacote com ${pricing[currentMethod].sessions} sessões:* ${formatMoney(calc.totalDiscounted / pricing[currentMethod].sessions)} por sessão`;
+
         if (pricing[currentMethod].inst > 1) {
-            text += ` (em até ${pricing[currentMethod].inst}x de ${formatMoney(calc.totalDiscounted / pricing[currentMethod].inst)})`;
+            text += `\nPagamento em até ${pricing[currentMethod].inst}x sem juros de ${formatMoney(calc.totalDiscounted / pricing[currentMethod].inst)}`;
         }
 
         const encodedText = encodeURIComponent(text);
@@ -1347,10 +1351,10 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message: text })
             });
-            
+
             const data = await response.json();
             removeMessage(loadingId);
-            
+
             if (data.reply) {
                 appendMessage(data.reply, 'bot');
             } else {
