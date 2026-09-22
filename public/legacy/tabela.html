@@ -766,7 +766,7 @@
 
 <script>
     const pricing = {
-        cartao: { label: "Cartão de Crédito", inst: 10, sessions: 5, data: { PP: 399, P: 549, M: 899, G: 999, GG: 1199 } }
+        cartao: { label: "Preço padrão", inst: 1, sessions: 5, data: { PP: 199.50, P: 274.50, M: 449.50, G: 499.50, GG: 599.50 } }
     };
 
     const areaLists = {
@@ -913,28 +913,6 @@
         
         container.innerHTML = Object.keys(areaLists).map(size => {
             const sizeAreas = areaLists[size];
-            const checkedInThisSize = selectedAreas.filter(a => a.size === size);
-            
-            let summaryHTML = '';
-            if (checkedInThisSize.length > 0) {
-                const methodsToShow = [
-                    { key: 'cartao', label: 'Cartão de Crédito' }
-                ];
-
-                let lines = methodsToShow.map(m => {
-                    const savedMethod = currentMethod;
-                    currentMethod = m.key;
-                    const calc = calculateSimulatedCart(checkedInThisSize);
-                    const sessCount = pricing[m.key].sessions;
-                    const porSessao = calc.totalDiscounted / sessCount;
-                    currentMethod = savedMethod;
-
-                    return `<div class="card-summary-line"><span>${formatMoney(porSessao)} por sessão</span> <span>- ${m.label}</span></div>`;
-                }).join('');
-
-                summaryHTML = `<div class="card-summary-box">${lines}</div>`;
-            }
-
             return `
             <div class="card">
                 <div class="card-header" style="margin-bottom: 12px;">
@@ -950,7 +928,6 @@
                         </label>`;
                     }).join('')}
                 </div>
-                ${summaryHTML}
             </div>`;
         }).join('');
 
@@ -964,26 +941,6 @@
         comboDefinitions.forEach((combo, idx) => {
             const isComboSelected = selectedCombos.some(c => c.title === combo.title);
 
-            let summaryHTML = '';
-            if (isComboSelected) {
-                const methodsToShow = [
-                    { key: 'cartao', label: 'Cartão de Crédito' }
-                ];
-
-                let lines = methodsToShow.map(m => {
-                    const savedMethod = currentMethod;
-                    currentMethod = m.key;
-                    const calc = calculateSimulatedCart(combo.areas);
-                    const sessCount = pricing[m.key].sessions;
-                    const porSessao = calc.totalDiscounted / sessCount;
-                    currentMethod = savedMethod;
-
-                    return `<div class="card-summary-line"><span>${formatMoney(porSessao)} por sessão</span> <span>- ${m.label}</span></div>`;
-                }).join('');
-
-                summaryHTML = `<div class="card-summary-box">${lines}</div>`;
-            }
-
             container.innerHTML += `
             <div class="card card-combo">
                 <div class="card-header" style="margin-bottom: 6px;">
@@ -991,7 +948,6 @@
                 </div>
                 <div class="card-body" style="margin-bottom: 12px;">${combo.desc}</div>
                 <button class="btn-outline" onclick="toggleComboSelection(${idx})">${isComboSelected ? 'Remover Combo' : 'Selecionar Combo'}</button>
-                ${summaryHTML}
             </div>`;
         });
     }
