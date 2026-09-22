@@ -516,6 +516,10 @@
         return 0.40;
     }
 
+    function applyFirstSessionDiscount(value) {
+        return currentMethod === 'avulso' ? value * 0.50 : value;
+    }
+
     // EXATAMENTE A MESMA FUNÇÃO DA TABELA.HTML (GARANTE O CÁLCULO 100% IDÊNTICO)
     function calculateSimulatedCart(simulatedAreas, simulatedCombos) {
         const pricesObj = pricing[currentMethod].data;
@@ -563,7 +567,7 @@
             // Na tabela.html o desconto progressivo por posição é aplicado
             // sempre, independente da forma de pagamento.
             let multiplier = getDiscountMultiplier(index);
-            let finalPrice = basePrice * multiplier;
+            let finalPrice = applyFirstSessionDiscount(basePrice * multiplier);
             totalFull += basePrice;
             totalDiscounted += finalPrice;
             detailed.push({ ...item, basePrice, finalPrice, perSession: finalPrice / pricing[currentMethod].sessions });
@@ -605,7 +609,7 @@
         items.forEach((item, index) => {
             let basePrice = pricesObj[item.size];
             let multiplier = getDiscountMultiplier(index);
-            let finalPrice = basePrice * multiplier;
+            let finalPrice = applyFirstSessionDiscount(basePrice * multiplier);
 
             totalFull += basePrice;
             totalDiscounted += finalPrice;
@@ -974,6 +978,9 @@
         const valFinal = calc.totalDiscounted;
 
         let summaryHTML = `<div class="summary-row summary-total"><span>Base Total:</span> <span>${formatMoney(valFinal)}</span></div>`;
+        if (currentMethod === 'avulso') {
+            summaryHTML += `<div class="summary-row" style="color: var(--discount-color);"><span>Desconto 1ª Sessão:</span> <span>aplicado</span></div>`;
+        }
         if (isInst) {
             summaryHTML += `<div class="summary-row" style="justify-content: flex-end; font-size: 0.85rem; color: var(--primary);">em até ${instCount}x de ${formatMoney(valFinal / instCount)}</div>`;
         }
