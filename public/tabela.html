@@ -468,14 +468,12 @@
         <h3 class="payment-title" id="typed-text"></h3><span class="typing-cursor"></span>
     </div>
     
-    <div class="payment-notice" id="payment-notice"></div>
-    
     <div class="discount-persistent-notice">
         <strong>Monte seu Combo:</strong> ao acrescentar mais de uma região ao seu carrinho, você garante automaticamente descontos progressivos especiais em cada região adicionada!
     </div>
 
     <div class="discount-persistent-notice">
-        <strong>Aviso Importante:</strong> Todos os pacotes são compostos por 10 sessões.
+        <strong>Nota explicativa:</strong> O protocolo recomendado para eliminação duradoura dos pelos costuma girar em torno de 8 a 10 sessões, variando conforme a resposta biológica individual. Na Estética Grazielle Diniz, oferecemos a contratação em ciclos modulares de 5 sessões como uma facilidade financeira, permitindo que você acompanhe sua evolução sem se prender a contratos longos. Ao final da 5ª sessão, realizamos uma reavaliação personalizada para definir se há necessidade de um novo ciclo ou apenas manutenções pontuais.
     </div>
     
     <div id="cards-container"></div>
@@ -497,7 +495,7 @@
             </button>
             <div class="faq-answer">
                 <div class="faq-answer-inner">
-                    A Grazielle Diniz é Esteticista e Cosmetóloga há mais de 8 anos. Diferente de franquias, a própria Grazielle realiza as sessões e acompanhamento durante todo o tratamento, possui excelente reputação e, por ter equipamento próprio, oferece flexibilidade de horários, sem se prender a datas engessadas de "laser day". Além disso, possui formas de pagamento flexíveis, como crédito recorrente e PIX parcelado.
+                    A Grazielle Diniz é Esteticista e Cosmetóloga há mais de 8 anos. Diferente de franquias, a própria Grazielle realiza as sessões e acompanhamento durante todo o tratamento, possui excelente reputação e, por ter equipamento próprio, oferece flexibilidade de horários, sem se prender a datas engessadas de "laser day". Além disso, oferece contratação em ciclos modulares para facilitar o acompanhamento do tratamento.
                 </div>
             </div>
         </div>
@@ -706,14 +704,6 @@
 
         <div class="cart-summary" id="cart-summary"></div>
 
-        <div style="margin-top: 15px; margin-bottom: 15px; border-top: 1px dashed var(--border); padding-top: 12px;">
-            <label for="cart-payment-method" style="font-size: 0.85rem; font-weight: 600; color: var(--primary); display: block; margin-bottom: 4px;">Forma de Pagamento:</label>
-            <span style="font-size: 0.75rem; color: #DC2626; background-color: #FEF08A; padding: 4px 8px; border-radius: 4px; display: block; margin-bottom: 8px; font-weight: normal;">Os descontos são personalizados de acordo com a forma de pagamento escolhida.</span>
-            <select id="cart-payment-method" class="payment-selector" onchange="changeMethod(this.value); buildCartView();" style="margin-top: 0; margin-bottom: 0;">
-                <option value="" disabled selected>Selecione a forma de pagamento...</option>
-            </select>
-        </div>
-
         <div class="cart-actions">
             <button class="btn-add-more" onclick="closeModal('cart-modal')">Adicionar mais regiões</button>
             <button class="btn-clear" onclick="clearCart()">Limpar Carrinho</button>
@@ -776,11 +766,7 @@
 
 <script>
     const pricing = {
-        cartao_total: { label: "Cartão de Crédito", notice: "Pagamento total no cartão de crédito em até 10x sem juros.", inst: 10, sessions: 10, data: { PP: 349, P: 499, M: 799, G: 899, GG: 1099 } },
-        pix_vista: { label: "PIX à Vista", notice: "Pagamento à vista com 5% de desconto especial.", inst: 1, sessions: 10, data: { PP: 331.55, P: 474.05, M: 759.05, G: 854.05, GG: 1044.05 } },
-        recorrente: { label: "Recorrente Cartão", notice: "Pagamento com débito automático mensal sem comprometer o limite do cartão de crédito.", inst: 10, sessions: 10, data: { PP: 399, P: 549, M: 899, G: 999, GG: 1199 } },
-        boleto: { label: "Pix Parcelado", notice: "Pagamento mensal via pix parcelado com data fixa. O não pagamento da mensalidade impede a realização da sessão.", inst: 10, sessions: 10, data: { PP: 449, P: 599, M: 949, G: 1099, GG: 1299 } },
-        avulso: { label: "Sessão Avulsa", notice: "Pagamento por sessão individual para manutenção.", inst: 1, sessions: 1, data: { PP: 50, P: 70, M: 100, G: 120, GG: 150 } }
+        cartao: { label: "Cartão de Crédito", inst: 10, sessions: 5, data: { PP: 399, P: 549, M: 899, G: 999, GG: 1199 } }
     };
 
     const areaLists = {
@@ -843,12 +829,12 @@
         { title: "Costas Completas", desc: "Costas superior e inferior para maior conforto.", areas: [{id: 'Costas Superior', size: 'GG'}, {id: 'Costas Inferior', size: 'GG'}] }
     ];
 
-    let currentMethod = 'cartao_total';
+    let currentMethod = 'cartao';
     let selectedAreas = []; 
     let selectedCombos = []; 
     let lastConflictMessage = '';
 
-    const phraseToType = "Selecione a forma de pagamento desejada para obter descontos personalizados:";
+    const phraseToType = "Escolha suas regiões para montar seu pacote:";
     let charIndex = 0;
     const typingSpeed = 35; 
 
@@ -872,8 +858,6 @@
 
     window.onload = function() {
         renderCards();
-        populatePaymentDropdown();
-        document.getElementById('payment-notice').innerHTML = `<strong>Importante:</strong> ${pricing[currentMethod].notice}`;
         setTimeout(typeWriterEffect, 300);
     };
 
@@ -881,20 +865,8 @@
 
     function changeMethod(method) {
         currentMethod = method;
-        document.getElementById('payment-notice').innerHTML = `<strong>Importante:</strong> ${pricing[currentMethod].notice}`;
         renderCards();
         updateFloatingBar();
-        const dropdown = document.getElementById('cart-payment-method');
-        if (dropdown) dropdown.value = method;
-    }
-
-    function populatePaymentDropdown() {
-        const dropdown = document.getElementById('cart-payment-method');
-        if (dropdown) {
-            dropdown.innerHTML = `<option value="" disabled selected>Selecione a forma de pagamento...</option>` + Object.keys(pricing).map(key => 
-                `<option value="${key}">${pricing[key].label}</option>`
-            ).join('');
-        }
     }
 
     function getDiscountMultiplier(index) {
@@ -946,11 +918,7 @@
             let summaryHTML = '';
             if (checkedInThisSize.length > 0) {
                 const methodsToShow = [
-                    { key: 'avulso', label: 'sessão avulsa' },
-                    { key: 'boleto', label: 'pix parcelado' },
-                    { key: 'recorrente', label: 'Recorrente Cartão' },
-                    { key: 'cartao_total', label: 'Cartão de Crédito' },
-                    { key: 'pix_vista', label: 'pagamento total no pix' }
+                    { key: 'cartao', label: 'Cartão de Crédito' }
                 ];
 
                 let lines = methodsToShow.map(m => {
@@ -999,11 +967,7 @@
             let summaryHTML = '';
             if (isComboSelected) {
                 const methodsToShow = [
-                    { key: 'avulso', label: 'sessão avulsa' },
-                    { key: 'boleto', label: 'pix parcelado' },
-                    { key: 'recorrente', label: 'Recorrente Cartão' },
-                    { key: 'cartao_total', label: 'Cartão de Crédito' },
-                    { key: 'pix_vista', label: 'pagamento total no pix' }
+                    { key: 'cartao', label: 'Cartão de Crédito' }
                 ];
 
                 let lines = methodsToShow.map(m => {
@@ -1269,7 +1233,6 @@
     }
 
     function openCartModal() {
-        populatePaymentDropdown();
         buildCartView();
         document.getElementById('cart-modal').style.display = 'flex';
     }
@@ -1277,8 +1240,7 @@
     function closeModal(modalId) { document.getElementById(modalId).style.display = 'none'; }
 
     function buildCartView() {
-        const dropdown = document.getElementById('cart-payment-method');
-        const isPaymentSelected = dropdown.value !== "";
+        const isPaymentSelected = true;
         const calc = calculateCart();
         const listContainer = document.getElementById('cart-items-list');
         const alertBox = document.getElementById('conflict-alert-box');
@@ -1330,11 +1292,6 @@
 
         listContainer.innerHTML = htmlContent;
 
-        if (!isPaymentSelected) {
-            document.getElementById('cart-summary').innerHTML = `<div class="summary-row summary-total" style="text-align: center; color: var(--text-muted); font-size: 0.9rem; font-weight: normal;">Selecione a forma de pagamento acima para calcular o valor.</div>`;
-            return;
-        }
-
         const isInst = pricing[currentMethod].inst > 1;
         const instCount = pricing[currentMethod].inst;
         const valFinal = calc.totalDiscounted;
@@ -1376,12 +1333,6 @@
 
     function sendToWhatsApp(e) {
         e.preventDefault();
-        const dropdown = document.getElementById('cart-payment-method');
-        if (!dropdown.value) {
-            alert('Por favor, selecione a forma de pagamento antes de enviar o pedido.');
-            dropdown.focus();
-            return;
-        }
 
         const totalCount = selectedAreas.length + selectedCombos.length;
         if (totalCount === 0) return;
