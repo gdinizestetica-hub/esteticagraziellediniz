@@ -359,7 +359,7 @@
     </div>
 
     <div class="discount-persistent-notice">
-        <strong>Aviso Importante:</strong> Todos os pacotes são compostos por 10 sessões.
+        <strong>Aviso Importante:</strong> Todos os pacotes são compostos por 5 sessões.
     </div>
     
     <div id="cards-container"></div>
@@ -434,11 +434,12 @@
 
 <script>
     const pricing = {
-        cartao_total: { label: "Cartão de Crédito", notice: "Pagamento total no cartão de crédito em até 10x sem juros.", inst: 10, sessions: 10, data: { PP: 349, P: 499, M: 799, G: 899, GG: 1099 } },
-        pix_vista: { label: "PIX à Vista", notice: "Pagamento à vista com 5% de desconto especial.", inst: 1, sessions: 10, data: { PP: 331.55, P: 474.05, M: 759.05, G: 854.05, GG: 1044.05 } },
-        recorrente: { label: "Recorrente Cartão", notice: "Pagamento com débito automático mensal sem comprometer o limite do cartão de crédito.", inst: 10, sessions: 10, data: { PP: 399, P: 549, M: 899, G: 999, GG: 1199 } },
-        boleto: { label: "Pix Parcelado", notice: "Pagamento mensal via pix parcelado com data fixa. O não pagamento da mensalidade impede a realização da sessão.", inst: 10, sessions: 10, data: { PP: 449, P: 599, M: 949, G: 1099, GG: 1299 } },
-        avulso: { label: "Sessão Avulsa", notice: "Pagamento por sessão individual para manutenção.", inst: 1, sessions: 1, data: { PP: 50, P: 70, M: 100, G: 120, GG: 150 } }
+        cartao_total: { label: "Cartão de Crédito", notice: "Pagamento total no cartão de crédito em até 5x sem juros.", inst: 5, sessions: 5, data: { PP: 349, P: 499, M: 799, G: 899, GG: 1099 } },
+        pix_vista: { label: "PIX à Vista", notice: "Pagamento à vista com 5% de desconto especial.", inst: 1, sessions: 5, data: { PP: 331.55, P: 474.05, M: 759.05, G: 854.05, GG: 1044.05 } },
+        recorrente: { label: "Recorrente Cartão", notice: "Pagamento com débito automático mensal sem comprometer o limite do cartão de crédito.", inst: 5, sessions: 5, data: { PP: 399, P: 549, M: 899, G: 999, GG: 1199 } },
+        boleto: { label: "Pix Parcelado", notice: "Pagamento mensal via pix parcelado com data fixa. O não pagamento da mensalidade impede a realização da sessão.", inst: 5, sessions: 5, data: { PP: 449, P: 599, M: 949, G: 1099, GG: 1299 } },
+        avulso: { label: "Sessão Avulsa", notice: "Pagamento por sessão individual.", inst: 1, sessions: 1, data: { PP: 50, P: 70, M: 100, G: 120, GG: 150 } },
+        avulso_desconto: { label: "Desconto 1ª Sessão", notice: "Condição especial para a primeira sessão avulsa.", inst: 1, sessions: 1, data: { PP: 50, P: 70, M: 100, G: 120, GG: 150 } }
     };
 
     const areaLists = {
@@ -517,7 +518,7 @@
     }
 
     function applyFirstSessionDiscount(value) {
-        return currentMethod === 'avulso' ? value * 0.50 : value;
+        return currentMethod === 'avulso_desconto' ? value * 0.50 : value;
     }
 
     // EXATAMENTE A MESMA FUNÇÃO DA TABELA.HTML (GARANTE O CÁLCULO 100% IDÊNTICO)
@@ -656,6 +657,7 @@
             if (checkedInThisSize.length > 0) {
                 const methodsToShow = [
                     { key: 'avulso', label: 'sessão avulsa' },
+                    { key: 'avulso_desconto', label: 'desconto 1ª sessão' },
                     { key: 'boleto', label: 'pix parcelado' },
                     { key: 'recorrente', label: 'Recorrente Cartão' },
                     { key: 'cartao_total', label: 'Cartão de Crédito' },
@@ -709,6 +711,7 @@
             if (isComboSelected) {
                 const methodsToShow = [
                     { key: 'avulso', label: 'sessão avulsa' },
+                    { key: 'avulso_desconto', label: 'desconto 1ª sessão' },
                     { key: 'boleto', label: 'pix parcelado' },
                     { key: 'recorrente', label: 'Recorrente Cartão' },
                     { key: 'cartao_total', label: 'Cartão de Crédito' },
@@ -978,7 +981,7 @@
         const valFinal = calc.totalDiscounted;
 
         let summaryHTML = `<div class="summary-row summary-total"><span>Base Total:</span> <span>${formatMoney(valFinal)}</span></div>`;
-        if (currentMethod === 'avulso') {
+        if (currentMethod === 'avulso_desconto') {
             summaryHTML += `<div class="summary-row" style="color: var(--discount-color);"><span>Desconto 1ª Sessão:</span> <span>aplicado</span></div>`;
         }
         if (isInst) {
