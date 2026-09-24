@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <title>Proposta Personalizada | Grazielle Diniz - Estética e Depilação a Laser</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary: #004D40; 
+            --primary: #004D40;
             --primary-light: #00695C;
             --primary-very-light: rgba(0, 77, 64, 0.08);
-            --bg: #F8F8F5; 
+            --bg: #F8F8F5;
             --white: #FFFFFF;
             --text-dark: #2C3E50;
             --text-muted: #606F7B;
             --border: #D1D5DB;
-            --discount-color: #2E7D32; 
+            --discount-color: #2E7D32;
             --danger: #E53935;
-            --warning-bg: #FFFBEB; 
+            --warning-bg: #FFFBEB;
             --warning-border: #F59E0B;
             --warning-text: #B45309;
         }
@@ -48,7 +48,7 @@
             background-color: var(--white);
             text-align: center;
             padding-top: 20px;
-            position: relative; 
+            position: relative;
         }
 
         .header-logo-top {
@@ -56,13 +56,13 @@
             max-width: 260px;
             height: auto;
             display: inline-block;
-            margin-bottom: -1px; 
+            margin-bottom: -1px;
         }
 
         .container {
-            max-width: 1100px; 
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 20px 15px 80px; 
+            padding: 20px 15px 80px;
         }
 
         header.content-header { text-align: center; margin-bottom: 25px; }
@@ -95,14 +95,14 @@
             width: 100%;
             border-collapse: collapse;
             table-layout: fixed;
-            min-width: 1100px;
+            min-width: 0;
         }
 
         .comparison-table th, .comparison-table td {
             padding: 15px;
             border-bottom: 1px solid var(--border);
             vertical-align: top;
-            width: 20%;
+            width: 100%;
         }
 
         .comparison-table th {
@@ -246,7 +246,7 @@
             cursor: pointer;
             text-align: center;
             transition: 0.2s;
-            margin-top: auto; 
+            margin-top: auto;
         }
         .btn-choose:hover { background-color: var(--primary-light); }
 
@@ -287,7 +287,7 @@
     </header>
 
     <div class="discount-persistent-notice">
-        Aviso Importante: Todos os pacotes são compostos por 10 sessões.
+        Aviso Importante: Todos os pacotes são compostos por 5 sessões.
     </div>
 
     <div class="actions-row">
@@ -297,13 +297,7 @@
     <div class="comparison-wrapper">
         <table class="comparison-table">
             <thead>
-                <tr>
-                    <th>PIX à Vista <span>5% de desconto</span></th>
-                    <th>PIX Parcelado <span>Mensal com data fixa</span></th>
-                    <th>Cartão de Crédito <span>Até 10x sem juros</span></th>
-                    <th>Recorrente Cartão <span>Débito automático mensal</span></th>
-                    <th>Sessão Avulsa <span>Manutenção individual</span></th>
-                </tr>
+                <tr><th id="budget-method-heading">Seu orçamento</th></tr>
             </thead>
             <tbody id="comparison-body">
                 <!-- Preenchido via JavaScript -->
@@ -316,11 +310,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
     const pricing = {
-        cartao_total: { label: "Cartão de Crédito", notice: "Pagamento total no cartão de crédito em até 10x sem juros.", inst: 10, sessions: 10, data: { PP: 349, P: 499, M: 799, G: 899, GG: 1099 } },
-        pix_vista: { label: "PIX à Vista", notice: "Pagamento à vista com 5% de desconto especial.", inst: 1, sessions: 10, data: { PP: 331.55, P: 474.05, M: 759.05, G: 854.05, GG: 1044.05 } },
-        recorrente: { label: "Recorrente Cartão", notice: "Pagamento com débito automático mensal sem comprometer o limite do cartão de crédito.", inst: 10, sessions: 10, data: { PP: 399, P: 549, M: 899, G: 999, GG: 1199 } },
-        boleto: { label: "Pix Parcelado", notice: "Pagamento mensal via pix parcelado com data fixa. O não pagamento da mensalidade impede a realização da sessão.", inst: 10, sessions: 10, data: { PP: 449, P: 599, M: 949, G: 1099, GG: 1299 } },
-        avulso: { label: "Sessão Avulsa", notice: "Pagamento por sessão individual para manutenção.", inst: 1, sessions: 1, data: { PP: 50, P: 70, M: 100, G: 120, GG: 150 } }
+        cartao_total: { label: "Cartão de Crédito", notice: "Pagamento total no cartão de crédito em até 5x sem juros.", inst: 5, sessions: 5, data: { PP: 174.50, P: 249.50, M: 399.50, G: 449.50, GG: 549.50 } },
+        pix_vista: { label: "PIX à Vista", notice: "Pagamento à vista com 5% de desconto especial.", inst: 1, sessions: 5, data: { PP: 165.775, P: 237.025, M: 379.525, G: 427.025, GG: 522.025 } },
+        recorrente: { label: "Recorrente Cartão", notice: "Pagamento com débito automático mensal sem comprometer o limite do cartão de crédito.", inst: 5, sessions: 5, data: { PP: 199.50, P: 274.50, M: 449.50, G: 499.50, GG: 599.50 } },
+        boleto: { label: "Pix Parcelado", notice: "Pagamento mensal via pix parcelado com data fixa. O não pagamento da mensalidade impede a realização da sessão.", inst: 5, sessions: 5, data: { PP: 224.50, P: 299.50, M: 474.50, G: 549.50, GG: 649.50 } },
+        avulso: { label: "Sessão Avulsa", notice: "Pagamento por sessão individual.", inst: 1, sessions: 1, data: { PP: 50, P: 70, M: 100, G: 120, GG: 150 } },
+        avulso_desconto: { label: "Desconto 1ª Sessão", notice: "Condição especial para a primeira sessão avulsa.", inst: 1, sessions: 1, data: { PP: 50, P: 70, M: 100, G: 120, GG: 150 } }
     };
 
     const areaLists = {
@@ -345,6 +340,7 @@
 
     let selectedAreas = [];
     let selectedCombos = [];
+    let selectedMethod = 'recorrente';
 
     window.onload = function() {
         loadBudgetData();
@@ -371,6 +367,7 @@
                 const json = decodeURIComponent(escape(atob(encoded)));
                 const parsed = JSON.parse(json);
                 selectedAreas = parsed.selectedAreas || [];
+                selectedMethod = pricing[parsed.method] ? parsed.method : 'recorrente';
                 selectedCombos = [];
                 if (parsed.selectedCombos) {
                     parsed.selectedCombos.forEach(cId => {
@@ -393,6 +390,7 @@
                 try {
                     const parsed = JSON.parse(savedData);
                     selectedAreas = parsed.selectedAreas || [];
+                    selectedMethod = pricing[parsed.method] ? parsed.method : 'recorrente';
                     selectedCombos = [];
                     if (parsed.selectedCombos) {
                         parsed.selectedCombos.forEach(cId => {
@@ -420,6 +418,10 @@
         if (index === 3) return 0.60;
         if (index === 4 || index === 5) return 0.50;
         return 0.40;
+    }
+
+    function applyFirstSessionDiscount(value, methodKey) {
+        return methodKey === 'avulso_desconto' ? value * 0.50 : value;
     }
 
     // Calculador ISOLADO: recebe um grupo de áreas/combos e aplica o desconto
@@ -466,7 +468,7 @@
         items.forEach((item, index) => {
             let basePrice = pricesObj[item.size];
             let multiplier = getDiscountMultiplier(index);
-            let finalPrice = basePrice * multiplier;
+            let finalPrice = applyFirstSessionDiscount(basePrice * multiplier, methodKey);
             totalFull += basePrice;
             totalDiscounted += finalPrice;
             detailed.push({ ...item, basePrice, finalPrice, perSession: finalPrice / pricing[methodKey].sessions });
@@ -504,7 +506,7 @@
         items.forEach((item, index) => {
             let basePrice = pricesObj[item.size];
             let multiplier = getDiscountMultiplier(index);
-            let finalPrice = basePrice * multiplier;
+            let finalPrice = applyFirstSessionDiscount(basePrice * multiplier, methodKey);
             totalFull += basePrice;
             totalDiscounted += finalPrice;
             detailed.push({ ...item, basePrice, finalPrice, perSession: finalPrice / pricing[methodKey].sessions });
@@ -532,79 +534,59 @@
 
     function renderComparisonTable() {
         const tbody = document.getElementById('comparison-body');
-        const methodsOrder = ['pix_vista', 'boleto', 'cartao_total', 'recorrente', 'avulso'];
+        const heading = document.getElementById('budget-method-heading');
+        const mKey = selectedMethod;
+        const calc = calculateCartForMethod(mKey, selectedAreas, selectedCombos);
+        const pData = pricing[mKey];
 
-        let html = '<tr>';
-        methodsOrder.forEach(mKey => {
-            let calc = calculateCartForMethod(mKey, selectedAreas, selectedCombos);
-            let pData = pricing[mKey];
+        heading.innerHTML = `${pData.label}<span>Pacote com ${pData.sessions} sessões</span>`;
+        let html = `<tr><td>
+            <div class="col-content">
+                <div class="item-list-mini">`;
 
-            html += `<td>
-                <div class="col-content">
-                    <div class="item-list-mini">`;
-            
-            calc.combos.forEach(c => {
-                let comboPerSession = c.totalDiscounted / pData.sessions;
-
-                html += `<div class="item-block">
-                    <div class="item-header-row">
-                        <div class="item-name-col">
-                            <span class="item-name-tag">${c.title}</span>
-                            <span class="item-single-price">${formatMoney(comboPerSession)} por sessão</span>
-                        </div>
+        calc.combos.forEach(c => {
+            const comboPerSession = c.totalDiscounted / pData.sessions;
+            html += `<div class="item-block">
+                <div class="item-header-row">
+                    <div class="item-name-col">
+                        <span class="item-name-tag">${c.title}</span>
+                        <span class="item-single-price">${formatMoney(comboPerSession)} por sessão</span>
                     </div>
-                    <ul class="combo-sublist">`;
-                c.areas.forEach(ar => { html += `<li>• ${ar.id}</li>`; });
-                html += `   </ul>
-                </div>`;
-            });
-
-            selectedAreas.forEach(a => {
-                let itemCalc = calc.detailed.find(i => i.id === a.id);
-                let itemPerSession = itemCalc ? itemCalc.perSession : 0;
-
-                html += `<div class="item-block">
-                    <div class="item-header-row">
-                        <div class="item-name-col">
-                            <span class="item-name-tag">${a.id}</span>
-                            <span class="item-single-price">${formatMoney(itemPerSession)} por sessão</span>
-                        </div>
-                    </div>
-                </div>`;
-            });
-
-            html += `   </div>
-                        <div>
-                            <div class="price-display">
-                                <span class="price-card-label">${pData.label}</span>`;
-            if (calc.totalFull !== calc.totalDiscounted && mKey !== 'avulso') {
-                html += `<span class="price-de-mini">De: ${formatMoney(calc.totalFull)}</span>`;
-            }
-            html += `           <span class="price-por-mini">${formatMoney(calc.totalDiscounted)}</span>`;
-            
-            let totalPerSession = calc.totalDiscounted / pData.sessions;
-            html += `<span class="price-sub-mini"><strong>${formatMoney(totalPerSession)}</strong> por sessão</span>`;
-
-            if (pData.inst > 1) {
-                html += `<span class="price-sub-mini" style="margin-top:4px;">Em até ${pData.inst}x de ${formatMoney(calc.totalDiscounted / pData.inst)}</span>`;
-            } else {
-                html += `<span class="price-notice-mini">${pData.notice || 'Valor total'}</span>`;
-            }
-
-            html += `        </div>
-                            <button class="btn-choose" onclick="selectOption('${pData.label}', ${calc.totalDiscounted}, ${pData.inst}, '${mKey}')">Escolher esta opção</button>
-                        </div>
                 </div>
-            </td>`;
+                <ul class="combo-sublist">${c.areas.map(ar => `<li>• ${ar.id}</li>`).join('')}</ul>
+            </div>`;
         });
-        html += '</tr>';
+
+        selectedAreas.forEach(a => {
+            const itemCalc = calc.detailed.find(i => i.id === a.id);
+            const itemPerSession = itemCalc ? itemCalc.perSession : 0;
+            html += `<div class="item-block">
+                <div class="item-header-row">
+                    <div class="item-name-col">
+                        <span class="item-name-tag">${a.id}</span>
+                        <span class="item-single-price">${formatMoney(itemPerSession)} por sessão</span>
+                    </div>
+                </div>
+            </div>`;
+        });
+
+        html += `</div>
+            <div class="price-display">
+                ${calc.totalFull !== calc.totalDiscounted && mKey !== 'avulso' ? `<span class="price-de-mini">De: ${formatMoney(calc.totalFull)}</span>` : ''}
+                <span class="price-card-label">Total do pacote</span>
+                <span class="price-por-mini">${formatMoney(calc.totalDiscounted)}</span>
+                <span class="price-sub-mini"><strong>${formatMoney(calc.totalDiscounted / pData.sessions)}</strong> por sessão no pacote com ${pData.sessions} sessões</span>
+                ${mKey === 'avulso_desconto' ? '<span class="price-notice-mini">Desconto 1ª Sessão aplicado</span>' : ''}
+                ${pData.inst > 1 ? `<span class="price-sub-mini" style="margin-top:4px;">Em até ${pData.inst}x de ${formatMoney(calc.totalDiscounted / pData.inst)}</span>` : `<span class="price-notice-mini">${pData.notice || 'Valor total'}</span>`}
+            </div>
+        </div></td></tr>`;
         tbody.innerHTML = html;
     }
 
     function selectOption(methodLabel, totalVal, instCount, mKey) {
         let calc = calculateCartForMethod(mKey, selectedAreas, selectedCombos);
         let text = "Olá Grazi! Escolhi meu orçamento pelo site:\n\n*Itens do Pacote e Valores:* \n";
-        
+
         calc.combos.forEach(c => {
             let comboSess = c.totalDiscounted / pricing[mKey].sessions;
             text += `- ${c.title}: ${formatMoney(c.totalDiscounted)} (${formatMoney(comboSess)} por sessão)\n`;
@@ -621,7 +603,7 @@
         let generalPerSession = totalVal / pricing[mKey].sessions;
         text += `\n*Forma de Pagamento Escolhida:* ${methodLabel}`;
         text += `\n*Valor Total:* ${formatMoney(totalVal)} (${formatMoney(generalPerSession)} por sessão)`;
-        
+
         if (instCount > 1) {
             text += `\n*Parcelamento:* Em até ${instCount}x de ${formatMoney(totalVal / instCount)}`;
         }

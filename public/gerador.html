@@ -980,7 +980,10 @@
         const instCount = pricing[currentMethod].inst;
         const valFinal = calc.totalDiscounted;
 
-        let summaryHTML = `<div class="summary-row summary-total"><span>Base Total:</span> <span>${formatMoney(valFinal)}</span></div>`;
+        const sessionCount = pricing[currentMethod].sessions;
+        const pricePerSession = valFinal / sessionCount;
+        let summaryHTML = `<div class="summary-row summary-total"><span>Total do pacote:</span> <span>${formatMoney(valFinal)}</span></div>`;
+        summaryHTML += `<div class="summary-row" style="color: var(--primary);"><span>No pacote com ${sessionCount} sessões:</span> <span>${formatMoney(pricePerSession)} por sessão</span></div>`;
         if (currentMethod === 'avulso_desconto') {
             summaryHTML += `<div class="summary-row" style="color: var(--discount-color);"><span>Desconto 1ª Sessão:</span> <span>aplicado</span></div>`;
         }
@@ -1076,7 +1079,7 @@
         e.preventDefault();
         const url = saveAndOpenBudget();
         if (!url) return;
-        const text = `Olá! Preparei o seu orçamento personalizado de depilação a laser aqui. Você pode conferir os valores detalhados por forma de pagamento por este link: ${url}`;
+        const text = `Olá! Preparei o seu orçamento personalizado de depilação a laser aqui. Você pode conferir o carrinho e o valor do pacote por este link: ${url}`;
         window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
     }
 </script>
