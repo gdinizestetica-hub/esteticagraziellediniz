@@ -3,6 +3,7 @@ export const site = {
   professional: 'Grazielle Diniz',
   domain: 'https://esteticagraziellediniz.com.br',
   phone: '(13) 99163-0136',
+  cnpj: '33.123.947/0001-49',
   whatsapp: '5513991630136',
   address: 'Av. Dom Pedro I, 1785, sala 406 — Enseada, Guarujá/SP',
   hours: 'Segunda a sexta: 08h às 21h; sábado: 08h às 18h',
