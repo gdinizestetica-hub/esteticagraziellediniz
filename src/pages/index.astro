@@ -16,7 +16,7 @@ const faqEntities = faqs.map((item) => ({ '@type': 'Question', name: item[0], ac
 const homeSchema = {
   '@context': 'https://schema.org',
   '@graph': [
-    { '@type': ['BeautySalon', 'LocalBusiness'], '@id': `${site.domain}/#business`, name: site.name, url: site.domain, telephone: '+55 13 99163-0136', image: site.domain + site.image, address: { '@type': 'PostalAddress', streetAddress: 'Av. Dom Pedro I, 1785, sala 406', addressLocality: 'Guarujá', addressRegion: 'SP', postalCode: '11440-002', addressCountry: 'BR' }, areaServed: { '@type': 'City', name: 'Guarujá' }, sameAs: ['https://instagram.com/esteticagraziellediniz'], aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', bestRating: '5', ratingCount: '57' } },
+    { '@type': ['BeautySalon', 'LocalBusiness'], '@id': `${site.domain}/#business`, name: site.name, url: site.domain, telephone: '+55 13 99163-0136', taxID: site.cnpj, image: site.domain + site.image, address: { '@type': 'PostalAddress', streetAddress: 'Av. Dom Pedro I, 1785, sala 406', addressLocality: 'Guarujá', addressRegion: 'SP', postalCode: '11440-002', addressCountry: 'BR' }, areaServed: { '@type': 'City', name: 'Guarujá' }, sameAs: ['https://instagram.com/esteticagraziellediniz'], aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', bestRating: '5', ratingCount: '57' } },
     { '@type': 'FAQPage', mainEntity: faqEntities }
   ]
 };
