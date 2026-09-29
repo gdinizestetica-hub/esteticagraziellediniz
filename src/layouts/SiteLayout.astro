@@ -9,6 +9,7 @@ const defaultSchema = {
   name: site.name,
   url: site.domain,
   telephone: '+55 13 99163-0136',
+  taxID: site.cnpj,
   image: site.domain + site.image,
   address: { '@type': 'PostalAddress', streetAddress: 'Av. Dom Pedro I, 1785, sala 406', addressLocality: 'Guarujá', addressRegion: 'SP', postalCode: '11440-002', addressCountry: 'BR' },
   areaServed: { '@type': 'City', name: 'Guarujá' },
@@ -37,7 +38,7 @@ const defaultSchema = {
   <header class="site-header"><nav class="wrap nav"><a class="brand" href="/">Grazielle Diniz<small>ESTÉTICA</small></a><div class="nav-links"><a href="/">Início</a><a href="/depilacao-laser-guaruja/">Depilação a laser</a><a href="/drenagem-linfatica-guaruja/">Drenagem Linfática</a><a href="/limpeza-de-pele-guaruja/">Limpeza de pele</a><a href="/blog/">Blog</a><a href="/contato/">Contato</a></div><button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button></nav></header>
   <main><slot /></main>
   <a class="floating-wa" href={whatsapp('Olá! Vim pelo site e gostaria de tirar algumas dúvidas.')} target="_blank" rel="noopener">WhatsApp</a>
-  <footer class="footer"><div class="wrap footer-grid"><div><a class="brand" href="/">Grazielle Diniz<small>ESTÉTICA</small></a><p>Estética e depilação a laser na Enseada, Guarujá.</p></div><div><strong>Atendimento</strong><p>{site.hours}</p><p>{site.address}</p></div><div><strong>Vamos conversar?</strong><p><a href={whatsapp('Olá! Gostaria de agendar uma avaliação.')} target="_blank" rel="noopener">Agendar pelo WhatsApp</a></p><p><a href="/contato/">Ver contato e localização</a></p></div></div></footer>
+  <footer class="footer"><div class="wrap footer-grid"><div><a class="brand" href="/">Grazielle Diniz<small>ESTÉTICA</small></a><p>Estética e depilação a laser na Enseada, Guarujá.</p><p class="footer-cnpj"><span>CNPJ:</span> {site.cnpj}</p></div><div><strong>Atendimento</strong><p>{site.hours}</p><p>{site.address}</p></div><div><strong>Vamos conversar?</strong><p><a href={whatsapp('Olá! Gostaria de agendar uma avaliação.')} target="_blank" rel="noopener">Agendar pelo WhatsApp</a></p><p><a href="/contato/">Ver contato e localização</a></p></div></div></footer>
   <script is:inline>document.querySelector('.menu-toggle')?.addEventListener('click',()=>{const n=document.querySelector('.nav-links');const b=document.querySelector('.menu-toggle');n?.classList.toggle('is-open');b?.setAttribute('aria-expanded',String(n?.classList.contains('is-open')))});</script>
 </body>
 </html>
